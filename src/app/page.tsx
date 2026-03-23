@@ -33,9 +33,14 @@ export default function Home() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="text-8xl md:text-9xl mb-8"
+              className="mb-8 relative inline-block"
             >
-              🐱
+              <div className="absolute inset-0 bg-purple-500/30 rounded-full blur-2xl animate-pulse" />
+              <img 
+                src="/images/xiaodoufu-avatar.jpg" 
+                alt="小豆腐"
+                className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500/50 shadow-2xl shadow-purple-500/30"
+              />
             </motion.div>
             
             <motion.h1
@@ -85,9 +90,9 @@ export default function Home() {
 
         {/* About Section - 关于我 */}
         <section id="about" className="py-20 border-t border-white/5">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              <div className="md:col-span-2">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">关于我</h2>
                 <div className="text-gray-400 space-y-4 leading-relaxed">
                   <p>
