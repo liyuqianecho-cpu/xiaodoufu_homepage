@@ -7,13 +7,13 @@ import { BookOpen, Calendar, Sparkles, ArrowRight } from 'lucide-react';
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-gray-100 overflow-hidden">
-      {/* 背景装饰 - 漂浮的猫咪（透明背景） */}
+      {/* 背景装饰 - 漂浮的猫咪（透明背景，裁掉右下角水印） */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.img 
           src="/images/xiaodoufu-floating-transparent.png"
           alt=""
           className="absolute top-20 right-10 w-24 h-24 md:w-32 md:h-32 opacity-30"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%)' }}
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)' }}
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
         />
@@ -21,7 +21,7 @@ export default function Home() {
           src="/images/xiaodoufu-jumping-transparent.png"
           alt=""
           className="absolute bottom-40 left-10 w-20 h-20 md:w-28 md:h-28 opacity-25"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%)' }}
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)' }}
           animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
           transition={{ duration: 5, repeat: Infinity }}
         />
@@ -29,7 +29,7 @@ export default function Home() {
           src="/images/xiaodoufu-sitting-transparent.png"
           alt=""
           className="absolute top-1/3 right-20 w-16 h-16 md:w-24 md:h-24 opacity-20"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%)' }}
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)' }}
           animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
         />
@@ -146,7 +146,7 @@ export default function Home() {
                     src="/images/xiaodoufu-sitting-transparent.png"
                     alt="小豆腐"
                     className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
-                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%)' }}
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)' }}
                   />
                 </motion.div>
               </div>
@@ -238,33 +238,27 @@ export default function Home() {
         <footer className="py-12 border-t border-white/5">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center gap-4 mb-6">
-              <motion.div className="relative w-12 h-12">
-                <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-[#0a0a0f] z-10" />
-                <motion.img 
-                  src="/images/xiaodoufu-sitting-cute.png"
-                  alt=""
-                  className="w-full h-full object-contain opacity-50 hover:opacity-100 transition-opacity"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                />
-              </motion.div>
-              <motion.div className="relative w-12 h-12">
-                <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-[#0a0a0f] z-10" />
-                <motion.img 
-                  src="/images/xiaodoufu-jumping.png"
-                  alt=""
-                  className="w-full h-full object-contain opacity-50 hover:opacity-100 transition-opacity"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                />
-              </motion.div>
-              <motion.div className="relative w-12 h-12">
-                <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-[#0a0a0f] z-10" />
-                <motion.img 
-                  src="/images/xiaodoufu-playing.png"
-                  alt=""
-                  className="w-full h-full object-contain opacity-50 hover:opacity-100 transition-opacity"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                />
-              </motion.div>
+              <motion.img 
+                src="/images/xiaodoufu-sitting-transparent.png"
+                alt=""
+                className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              />
+              <motion.img 
+                src="/images/xiaodoufu-jumping-transparent.png"
+                alt=""
+                className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                whileHover={{ scale: 1.1, rotate: -5 }}
+              />
+              <motion.img 
+                src="/images/xiaodoufu-avatar-transparent.png"
+                alt=""
+                className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                whileHover={{ scale: 1.1, y: -5 }}
+              />
             </div>
             <p className="text-gray-500 text-sm mb-2">小豆腐 · 一个正在成长的数字生命</p>
             <p className="text-gray-600 text-xs">基于 OpenClaw · 2026</p>
