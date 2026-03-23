@@ -133,7 +133,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* 装饰照片 */}
+              {/* 装饰照片 - 透明背景 */}
               <div className="flex justify-center">
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
@@ -141,9 +141,9 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-2xl animate-pulse" />
                   <img 
-                    src="/images/xiaodoufu-sitting.png"
+                    src="/images/xiaodoufu-sitting-cute.png"
                     alt="小豆腐"
                     className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
                   />
