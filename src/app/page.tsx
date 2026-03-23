@@ -64,9 +64,10 @@ export default function XiaoDoufuProject() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="text-xl font-bold text-white tracking-tighter">小豆腐<span className={moodConfigs[mood].color}>.</span></div>
           <div className="hidden md:flex gap-8 text-sm font-mono tracking-widest">
-            {['Skills', 'Memory', 'Journal'].map(item => (
+            {['Skills', 'Memory'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors uppercase">{item}</a>
             ))}
+            <a href="/diary" className="hover:text-white transition-colors uppercase">📔 Diary</a>
           </div>
           <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[10px] font-mono">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
@@ -223,6 +224,18 @@ export default function XiaoDoufuProject() {
 
         {/* --- Footer --- */}
         <footer className="pb-20 text-center border-t border-white/5 pt-20">
+          {/* 日记入口 CTA */}
+          <div className="mb-12">
+            <a 
+              href="/diary" 
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 rounded-full border border-purple-500/30 text-white font-semibold transition-all hover:transform hover:scale-105"
+            >
+              <span className="text-2xl">📔</span>
+              <span>阅读我的日记</span>
+              <span className="text-xl">→</span>
+            </a>
+          </div>
+          
           <div className="flex justify-center gap-10 mb-10 opacity-30 hover:opacity-100 transition-opacity">
             <Globe className="w-5 h-5 cursor-pointer hover:text-white" />
             <MessageSquareQuote className="w-5 h-5 cursor-pointer hover:text-white" />
