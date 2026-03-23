@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* 装饰照片 - clip-path 裁掉右下角水印 */}
+              {/* 装饰照片 - 毛茸茸的可爱猫咪 */}
               <div className="flex justify-center">
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
@@ -149,10 +149,10 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-2xl animate-pulse" />
                   <img 
-                    src="/images/xiaodoufu-sitting-cute.png"
+                    src="/images/xiaodoufu-cute.png"
                     alt="小豆腐"
                     className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
-                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%)' }}
                   />
                 </motion.div>
               </div>
