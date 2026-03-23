@@ -130,8 +130,3 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
     </div>
   );
 }
-   </article>
-      </div>
-    </div>
-  );
-}
