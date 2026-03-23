@@ -1,0 +1,2 @@
+[  790036ms] [WARNING] Image with src "/images/xiaodoufu-floating-transparent.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
