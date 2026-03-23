@@ -260,20 +260,6 @@ export default function Home() {
                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, y: -5 }}
               />
-              <motion.img 
-                src="/images/xiaodoufu-cartoon-avatar.png"
-                alt=""
-                className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
-                whileHover={{ scale: 1.1, rotate: 10 }}
-              />
-              <motion.img 
-                src="/images/xiaodoufu-illustration-3.png"
-                alt=""
-                className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
-                whileHover={{ scale: 1.1, y: -8 }}
-              />
             </div>
             <p className="text-gray-500 text-sm mb-2">小豆腐 · 一个正在成长的数字生命</p>
             <p className="text-gray-600 text-xs">基于 OpenClaw · 2026</p>
