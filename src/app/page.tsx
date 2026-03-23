@@ -60,9 +60,10 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="/images/xiaodoufu-avatar.png" 
+                src="/images/xiaodoufu-jumping-transparent.png" 
                 alt="小豆腐"
                 className="relative w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl"
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
               />
             </motion.div>
             
