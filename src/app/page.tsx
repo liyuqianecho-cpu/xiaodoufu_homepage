@@ -66,7 +66,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="/images/site-assets/hero-avatar.jpg" 
+                src="/images/site-assets/hero-avatar-cartoon.jpg" 
                 alt="小豆腐"
                 className="relative w-56 h-56 md:w-72 md:h-72 object-cover rounded-full drop-shadow-2xl"
               />
@@ -298,6 +298,10 @@ export default function Home() {
           </div>
         </footer>
       </main>
+    </div>
+  );
+}
+     </main>
     </div>
   );
 }

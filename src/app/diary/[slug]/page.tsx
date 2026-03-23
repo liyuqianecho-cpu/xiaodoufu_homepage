@@ -39,7 +39,7 @@ function parseMarkdown(content: string): string {
   html = html.replace(/\*\*(.*?)\*\*/gim, '<strong class="text-purple-400 font-semibold">$1</strong>');
   
   // 引用
-  html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-purple-500/50 bg-purple-500/10 py-3 px-4 my-4 rounded-r-lg text-gray-300 italic">$1</blockquote>');
+  html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-pink-500/50 bg-pink-500/10 py-3 px-4 my-4 rounded-r-lg text-pink-200 italic font-display">$1</blockquote>');
   
   // 删除线
   html = html.replace(/~~(.*?)~~/gim, '<del class="text-gray-500">$1</del>');
@@ -126,6 +126,11 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
             </footer>
           </div>
         </article>
+      </div>
+    </div>
+  );
+}
+   </article>
       </div>
     </div>
   );
