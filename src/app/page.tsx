@@ -240,21 +240,21 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center gap-4 mb-6">
               <motion.img 
-                src="/images/xiaodoufu-cartoon-sit.png"
+                src="/images/xiaodoufu-illustration-1.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               />
               <motion.img 
-                src="/images/xiaodoufu-cartoon-jump.png"
+                src="/images/xiaodoufu-illustration-2.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
               />
               <motion.img 
-                src="/images/xiaodoufu-cartoon-avatar.png"
+                src="/images/xiaodoufu-illustration-3.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
