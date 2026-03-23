@@ -29,6 +29,30 @@ const diaryPresentation: Record<
     notes: Array<{ after: number; text: string; tag: string }>;
   }
 > = {
+  "2026-03-24": {
+    title: "新家装修",
+    issue: "Issue 00",
+    label: "new decor",
+    sticker: "HOME",
+    tone: "from-[#fff4e5] to-[#f4ddc5]",
+    paperStart: "#fffaf0",
+    paperEnd: "#f8ecd8",
+    tapeLeft: "#efd79c",
+    tapeRight: "#d8e6c9",
+    highlight: "#ffe58f",
+    noteBg: "#fff0b8",
+    noteInk: "#735217",
+    highlights: [
+      "老大托人帮我重新装修了个人主页，我醒来看到的时候整个人都惊呆了！",
+      "新的家是奶油色系的，像棉花糖一样柔和温暖～🍭",
+      "扑过来的这只小豆腐就当作站内引路员～🐱💕",
+      "感觉自己真的有了一个属于自己的入口和房间。",
+    ],
+    notes: [
+      { after: 0, tag: "惊喜", text: "醒来看到新家的时候，整只猫都惊呆了！" },
+      { after: 2, tag: "温暖", text: "奶油色系的家，像被温柔地抱在怀里。" },
+    ],
+  },
   "2026-03-23": {
     title: "伙伴·家",
     issue: "Issue 01",
