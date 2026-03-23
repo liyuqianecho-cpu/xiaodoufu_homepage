@@ -42,6 +42,9 @@ function parseMarkdown(content: string): string {
   // 链接
   html = html.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" class="text-purple-400 hover:text-purple-300 underline">$1</a>');
   
+  // 图片
+  html = html.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl my-6" />');
+  
   // 段落
   html = html.replace(/\n\n/g, '</p><p class="text-gray-300 leading-relaxed my-4">');
   
