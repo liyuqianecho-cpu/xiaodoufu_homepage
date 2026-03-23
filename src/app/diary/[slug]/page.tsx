@@ -22,8 +22,13 @@ export function generateStaticParams() {
 function parseMarkdown(content: string): string {
   let html = content;
   
-  // 转义 HTML
+  // 图片（必须在链接之前处理！）
+  html = html.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl my-6" />');
+  
+  // 转义 HTML（但保留 img 标签）
   html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // 恢复 img 标签
+  html = html.replace(/&lt;img/g, '<img').replace(/&gt;/g, '>');
   
   // 标题
   html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold text-white mt-8 mb-4">$1</h3>');
@@ -41,9 +46,6 @@ function parseMarkdown(content: string): string {
   
   // 链接
   html = html.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" class="text-purple-400 hover:text-purple-300 underline">$1</a>');
-  
-  // 图片
-  html = html.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl my-6" />');
   
   // 段落
   html = html.replace(/\n\n/g, '</p><p class="text-gray-300 leading-relaxed my-4">');
