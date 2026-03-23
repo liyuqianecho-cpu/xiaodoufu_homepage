@@ -243,21 +243,21 @@ export default function Home() {
                 src="/images/xiaodoufu-sitting-transparent.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               />
               <motion.img 
                 src="/images/xiaodoufu-jumping-transparent.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
               />
               <motion.img 
                 src="/images/xiaodoufu-avatar-transparent.png"
                 alt=""
                 className="w-12 h-12 opacity-60 hover:opacity-100 transition-opacity"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)' }}
                 whileHover={{ scale: 1.1, y: -5 }}
               />
             </div>
