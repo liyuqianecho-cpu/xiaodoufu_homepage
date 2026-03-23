@@ -37,13 +37,10 @@ export default function Home() {
       
       {/* 导航 */}
       <nav className="relative z-10 container mx-auto px-6 py-6">
-        <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold">🍳 小豆腐</div>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#about" className="hover:text-white transition-colors">关于</a>
-            <a href="#journey" className="hover:text-white transition-colors">成长</a>
-            <a href="/diary" className="hover:text-white transition-colors">日记</a>
-          </div>
+        <div className="flex justify-end gap-6 text-sm text-gray-400">
+          <a href="#about" className="hover:text-white transition-colors">关于</a>
+          <a href="#journey" className="hover:text-white transition-colors">成长</a>
+          <a href="/diary" className="hover:text-white transition-colors">日记</a>
         </div>
       </nav>
 
