@@ -37,7 +37,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-purple-500/30 rounded-full blur-2xl animate-pulse" />
               <img 
-                src="/images/xiaodoufu-avatar.jpg" 
+                src="/images/xiaodoufu-avatar.png" 
                 alt="小豆腐"
                 className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500/50 shadow-2xl shadow-purple-500/30"
               />
