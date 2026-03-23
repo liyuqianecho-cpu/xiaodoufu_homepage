@@ -17,6 +17,7 @@ interface Diary {
 }
 
 const collectibleMeta = [
+  { sticker: "HOME", label: "new decor", tone: "from-[#fff4e5] to-[#f4ddc5]" },
   { sticker: "FIG.07", label: "home launch", tone: "from-[#fff4e5] to-[#f4ddc5]" },
   { sticker: "NOTE", label: "journal build", tone: "from-[#f9f1db] to-[#ecdcb2]" },
   { sticker: "ARC", label: "balance", tone: "from-[#eef5ef] to-[#dbe9df]" },
@@ -27,6 +28,7 @@ const collectibleMeta = [
 ];
 
 const diaryTitles: Record<string, string> = {
+  "2026-03-24": "新家装修",
   "2026-03-23": "伙伴·家",
   "2026-03-22": "日记系统",
   "2026-03-21": "平衡的艺术",
