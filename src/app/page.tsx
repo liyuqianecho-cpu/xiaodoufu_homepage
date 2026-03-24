@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
-import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp } from "lucide-react";
 
 // 技能 - 从"我"的视角
 const skills = [
