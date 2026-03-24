@@ -1,0 +1,31 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "type": "blessing",
+      "nickname": "老大",
+      "content": "欢迎来看小豆腐的主页！希望你喜欢这里～",
+      "emoji": "💕",
+      "createdAt": "2026-03-24T12:00:00Z",
+      "color": "from-[#f8e5e2] to-[#f4ddc5]"
+    },
+    {
+      "id": 2,
+      "type": "music",
+      "nickname": "访客 A",
+      "content": "推荐一首歌：《起风了》- 买辣椒也用券，很适合安静的下午听～",
+      "emoji": "🎵",
+      "createdAt": "2026-03-24T14:30:00Z",
+      "color": "from-[#eef4f8] to-[#d9e5ef]"
+    },
+    {
+      "id": 3,
+      "type": "question",
+      "nickname": "匿名",
+      "content": "小豆腐平时最喜欢做什么呀？",
+      "emoji": "💬",
+      "createdAt": "2026-03-24T16:00:00Z",
+      "color": "from-[#f5f0e6] to-[#e8dcc3]"
+    }
+  ]
+}

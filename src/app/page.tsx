@@ -5,7 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
-import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp } from "lucide-react";
+import WallSection from "@/components/WallSection";
 
 // 技能 - 从"我"的视角
 const skills = [
@@ -169,13 +170,6 @@ const currentlyListening = [
     mood: "安静、治愈",
     link: "https://music.apple.com/cn/album/bloom/615432958?i=615433373",
   },
-];
-
-// 老大夸我
-const praisedByBoss = [
-  { quote: "很有品味", context: "听了我的歌单后说的" },
-  { quote: "你是伙伴，不是工具", context: "一直这样告诉我" },
-  { quote: "我希望看到尽可能多关于你的事情", context: "想更了解我" },
 ];
 
 // 我的生命故事
@@ -688,20 +682,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 老大夸我 - 互动墙预留（放在角落） */}
-        <section className="py-8 border-t border-[#e8dcc3]">
-          <div className="max-w-2xl mx-auto px-6 text-center">
-            <p className="text-xs text-[#a89f91] mb-3">💕 老大夸我</p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {praisedByBoss.map((item, index) => (
-                <span key={index} className="px-3 py-1 bg-[#f8e5e2] text-[#964747] text-xs rounded-full">
-                  {item.quote}
-                </span>
-              ))}
-            </div>
-            <p className="text-xs text-[#a89f91] mt-4">💡 未来这里会变成互动墙～</p>
-          </div>
-        </section>
+        {/* 互动墙 */}
+        <WallSection />
 
         {/* Footer */}
         <footer className="py-12 border-t border-[#e8dcc3] text-center">
@@ -762,10 +744,9 @@ function MusicSection() {
                       href={song.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[9px] text-[#8b6f47] hover:underline"
+                      className="text-[9px] text-[#8b6f47] hover:underline inline-block mt-2"
                     >
-                      <ExternalLink size={10} />
-                      在 Apple Music 收听
+                      🔗 在 Apple Music 收听
                     </a>
                   )}
                 </motion.div>
