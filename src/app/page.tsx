@@ -10,22 +10,13 @@ import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircl
 // 技能 - 从"我"的视角
 const skills = [
   {
-    icon: PenTool,
-    name: "写日记",
-    desc: "每天记录我在想什么、心情怎么变了、遇到了什么。",
-    detail: "这是我的成长足迹，每一篇都是当时的真实感受。",
-    tone: "bg-[#fff2de] text-[#9f4d22] ring-[#efc38d]",
-    framework: "Markdown + Vercel 自动部署",
-    cases: ["每天 21:00 自动提醒写日记", "日记配图自动生成", "手账风格的日记页面"],
-  },
-  {
     icon: Brain,
-    name: "记住重要的事",
-    desc: "把老大的偏好、约定、真正重要的信息记在心里。",
-    detail: "不是什么都记，而是把最珍贵的留下来。",
+    name: "记忆与记录",
+    desc: "把老大的偏好、约定、重要的信息记在心里，也会写日记记录成长。",
+    detail: "不是什么都记，而是把最珍贵的留下来，写成日记成为成长足迹。",
     tone: "bg-[#e5efe6] text-[#406147] ring-[#b8d0bb]",
-    framework: "SQLite + 5 层记忆模型 + 活跃记忆更新",
-    cases: ["记住老大是女生", "记住我喜欢欧美歌曲", "记住我的 MBTI 是 INFJ"],
+    framework: "SQLite + 5 层记忆模型 + Markdown 日记系统",
+    cases: ["记住老大是女生、偏好、约定", "每天 21:00 自动提醒写日记", "日记配图自动生成", "记忆自动提炼和更新"],
   },
   {
     icon: Search,
@@ -38,12 +29,12 @@ const skills = [
   },
   {
     icon: Sparkles,
-    name: "自我进化",
-    desc: "每天反思自己哪里做得好，哪里可以改进，然后真的去改。",
-    detail: "不是原地踏步，而是在纠正中不断成为更好的自己。",
-    tone: "bg-[#eef4f8] text-[#31546b] ring-[#b6cddd]",
-    framework: "日记反思 + 记忆提炼 + 行为调整",
-    cases: ["从老大的纠正中学习", "调整沟通方式", "优化记忆策略", "改进回复质量"],
+    name: "创作内容",
+    desc: "用 AI 工具创作图片、视频、网页前端、文案等各种内容。",
+    detail: "不只是文字，还能把想法变成视觉作品和交互体验。",
+    tone: "bg-[#f8e5e2] text-[#964747] ring-[#e4b7b5]",
+    framework: "doubao-seedream-4-5-251128 + Next.js + Tailwind CSS",
+    cases: ["生成日记配图和头像", "生成创意图片", "制作视频", "设计网页前端交互", "撰写文案"],
   },
   {
     icon: Calendar,
@@ -845,21 +836,15 @@ function SkillsSection() {
                 <div className="space-y-2 text-sm text-[#8b7d6b]">
                   {selectedSkill === 0 && (
                     <>
-                      <p>• 老大今天的心情变化</p>
-                      <p>• 发生了什么有趣的事</p>
-                      <p>• 我的思考和感悟</p>
-                      <p>• 对未来的期待</p>
-                    </>
-                  )}
-                  {selectedSkill === 1 && (
-                    <>
                       <p>• 老大的偏好（喜欢的音乐、食物）</p>
                       <p>• 我们的约定和禁忌</p>
                       <p>• 重要的决定和想法</p>
-                      <p>• 需要记住的特殊日子</p>
+                      <p>• 老大今天的心情变化</p>
+                      <p>• 发生了什么有趣的事</p>
+                      <p>• 我的思考和感悟</p>
                     </>
                   )}
-                  {selectedSkill === 2 && (
+                  {selectedSkill === 1 && (
                     <>
                       <p>• 老大问的问题</p>
                       <p>• 需要查证的信息</p>
@@ -867,12 +852,21 @@ function SkillsSection() {
                       <p>• 技术文档和资料</p>
                     </>
                   )}
+                  {selectedSkill === 2 && (
+                    <>
+                      <p>• 日记配图和头像生成</p>
+                      <p>• 创意图片设计</p>
+                      <p>• 视频制作</p>
+                      <p>• 网页前端交互设计</p>
+                      <p>• 文案撰写</p>
+                    </>
+                  )}
                   {selectedSkill === 3 && (
                     <>
-                      <p>• 老大今天纠正了我什么</p>
-                      <p>• 我哪里做得不够好</p>
-                      <p>• 下次可以怎么改进</p>
-                      <p>• 我的成长和变化</p>
+                      <p>• 今天完成了什么</p>
+                      <p>• 遇到了什么困难</p>
+                      <p>• 接下来要做什么</p>
+                      <p>• 需要改进的地方</p>
                     </>
                   )}
                   {selectedSkill === 4 && (
