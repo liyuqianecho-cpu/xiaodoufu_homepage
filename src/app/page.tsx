@@ -535,11 +535,11 @@ function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer`}
+            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer relative`}
             onMouseEnter={() => setHoveredSkill(index)}
             onMouseLeave={() => setHoveredSkill(null)}
           >
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-4 relative z-10">
               <div className="flex items-start gap-4 flex-1">
                 <div className="p-2 bg-white/50 rounded-xl">
                   <skill.icon className="w-5 h-5" />
@@ -555,32 +555,32 @@ function SkillsSection() {
               />
             </div>
             
-            {/* 悬停展开详情 - 内联平滑展开 */}
+            {/* 悬停展开详情 - Pop-up 浮窗 */}
             <motion.div
-              initial={false}
-              animate={{ 
-                height: hoveredSkill === index ? 'auto' : 0,
-                opacity: hoveredSkill === index ? 1 : 0
-              }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="overflow-hidden"
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              animate={hoveredSkill === index ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute left-6 right-6 top-full mt-2 z-10"
+              style={{ pointerEvents: 'none' }}
             >
-              <div className="mt-4 pt-4 border-t border-black/10 space-y-3">
+              <div className="bg-white rounded-xl shadow-xl border border-[#e8dcc3] p-4 space-y-3">
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">🔧 实现框架</h4>
-                  <p className="text-sm font-mono bg-white/50 rounded-lg p-2">{skill.framework}</p>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#8b6f47] mb-2">🔧 实现框架</h4>
+                  <p className="text-xs font-mono bg-[#f5f0e6] rounded-lg p-2 text-[#8b7d6b]">{skill.framework}</p>
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">✨ 案例</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#8b6f47] mb-2">✨ 案例</h4>
                   <ul className="space-y-1">
                     {skill.cases.map((caseItem, i) => (
-                      <li key={i} className="text-sm flex items-start gap-2">
-                        <span className="text-xs mt-1">•</span>
+                      <li key={i} className="text-xs flex items-start gap-2 text-[#8b7d6b]">
+                        <span className="text-[#e8c18e] mt-0.5">•</span>
                         <span>{caseItem}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+                {/* 小三角 */}
+                <div className="absolute -top-2 left-8 w-4 h-4 bg-white border-l border-t border-[#e8dcc3] rotate-45" />
               </div>
             </motion.div>
           </motion.div>
