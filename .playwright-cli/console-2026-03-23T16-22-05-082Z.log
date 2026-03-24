@@ -1,166 +1,4 @@
-[     773ms] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <RedirectBoundary>
-      <RedirectErrorBoundary router={{...}}>
-        <InnerLayoutRouter url="/diary" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
-          <SegmentViewNode type="page" pagePath="diary/page...">
-            <SegmentTrieNode>
-            <DiaryList>
-              <div className="min-h-scre...">
-                <div>
-                <div className="relative m...">
-                  <nav>
-                  <header>
-                  <main>
-                    <div className="grid gap-6...">
-                      <LinkComponent>
-                      <LinkComponent>
-                      <LinkComponent>
-                        <LinkComponent href="/diary/202..." className="collectibl...">
-                          <a className="collectibl..." ref={function} onClick={function onClick} ...>
-                            <div className="h-full ove...">
-                              ...
-                                <div className="relative a...">
-                                  <img
-+                                   alt="今天记忆系统终于完成了�"
--                                   alt="今天记忆系统终于完成了�"
-                                    fetchPriority={undefined}
-                                    loading="lazy"
-                                    width={undefined}
-                                    height={undefined}
-                                    decoding="async"
-                                    data-nimg="fill"
-                                    className="object-cover transition duration-500 group-hover:scale-105"
-                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                                    srcSet={"/_next/image?url=%2Fimages%2Fdiary-final%2Fdiary-2026-03-21.jpg&w=256&q=..."}
-                                    src={"/_next/image?url=%2Fimages%2Fdiary-final%2Fdiary-2026-03-21.jpg&w=3840&q=75"}
-                                    ref={function}
-                                    onLoad={function onLoad}
-                                    onError={function onError}
-                                  >
-                              <div className="px-2 pb-2 ...">
-                                <h2
-                                  className="font-display text-[1.8rem] font-bold leading-[1.04] text-[var(--foreground)]"
-                                >
-+                                 今天记忆系统终于完成了�
--                                 今天记忆系统终于完成了�
-                                ...
-                      ...
-                  ...
-          ...
-        ...
-
-    at throwOnHydrationMismatch (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3318:56)
-    at prepareToHydrateHostInstance (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3372:23)
-    at completeWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6922:60)
-    at runWithFiberInDEV (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
-    at completeUnitOfWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
-    at performUnitOfWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
-    at workLoopConcurrentByScheduler (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
-    at renderRootConcurrent (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
-    at performWorkOnRoot (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
-    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
-    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
-[    2166ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-23.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
-[   18436ms] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <RedirectBoundary>
-      <RedirectErrorBoundary router={{...}}>
-        <InnerLayoutRouter url="/diary" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
-          <SegmentViewNode type="page" pagePath="diary/page...">
-            <SegmentTrieNode>
-            <DiaryList>
-              <div className="min-h-scre...">
-                <div>
-                <div className="relative m...">
-                  <nav>
-                  <header>
-                  <main>
-                    <div className="grid gap-6...">
-                      <LinkComponent>
-                      <LinkComponent>
-                      <LinkComponent>
-                        <LinkComponent href="/diary/202..." className="collectibl...">
-                          <a className="collectibl..." ref={function} onClick={function onClick} ...>
-                            <div className="h-full ove...">
-                              ...
-                                <div className="relative a...">
-                                  <img
-+                                   alt="今天记忆系统终于完成了�"
--                                   alt="今天记忆系统终于完成了�"
-                                    fetchPriority={undefined}
-                                    loading="lazy"
-                                    width={undefined}
-                                    height={undefined}
-                                    decoding="async"
-                                    data-nimg="fill"
-                                    className="object-cover transition duration-500 group-hover:scale-105"
-                                    style={{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:undefined, ...}}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                                    srcSet={"/_next/image?url=%2Fimages%2Fdiary-final%2Fdiary-2026-03-21.jpg&w=256&q=..."}
-                                    src={"/_next/image?url=%2Fimages%2Fdiary-final%2Fdiary-2026-03-21.jpg&w=3840&q=75"}
-                                    ref={function}
-                                    onLoad={function onLoad}
-                                    onError={function onError}
-                                  >
-                              <div className="px-2 pb-2 ...">
-                                <h2
-                                  className="font-display text-[1.8rem] font-bold leading-[1.04] text-[var(--foreground)]"
-                                >
-+                                 今天记忆系统终于完成了�
--                                 今天记忆系统终于完成了�
-                                ...
-                      ...
-                  ...
-          ...
-        ...
-
-    at throwOnHydrationMismatch (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3318:56)
-    at prepareToHydrateHostInstance (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3372:23)
-    at completeWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6922:60)
-    at runWithFiberInDEV (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
-    at completeUnitOfWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
-    at performUnitOfWork (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
-    at workLoopConcurrentByScheduler (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
-    at renderRootConcurrent (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
-    at performWorkOnRoot (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
-    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
-    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
-[   18335ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-23.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
-[   47655ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-23.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
-[ 1938255ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-23.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
-[ 1941475ms] [WARNING] The resource http://127.0.0.1:3100/_next/static/media/8ed9b13d87d9f002-s.p.0dws5r5u~ijuc.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://127.0.0.1:3100/diary:0
-[ 1941476ms] [WARNING] The resource http://127.0.0.1:3100/_next/static/media/f112ed7f0b91582f-s.p.0xqqmnf1a3x8p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://127.0.0.1:3100/diary:0
-[ 1966376ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-23.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
-[29751145ms] [ERROR] ./src/app/page.tsx:79:61
+[29176562ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -180,7 +18,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29751855ms] [ERROR] ./src/app/page.tsx:79:61
+[29177273ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -200,7 +38,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29753347ms] [ERROR] ./src/app/page.tsx:79:61
+[29178765ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -220,7 +58,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29753835ms] [ERROR] ./src/app/page.tsx:79:61
+[29179254ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -240,8 +78,8 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29753840ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary?_rsc=1njlp:0
-[29753908ms] [ERROR] ./src/app/page.tsx:79:61
+[29179258ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15?_rsc=d9e4x:0
+[29179327ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -261,7 +99,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29753987ms] [ERROR] ./src/app/page.tsx:79:61
+[29179405ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -281,7 +119,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29754044ms] [ERROR] ./src/app/page.tsx:79:61
+[29179462ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -301,8 +139,28 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
-[29754260ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary:0
-[29754838ms] Error: ./src/app/page.tsx:79:61
+[29179736ms] [ERROR] ./src/app/page.tsx:79:61
+Expected ',', got 'ident'
+  77 | ...
+  78 | ...
+> 79 | ...真实表达和什么叫"像自己写的"这件事，我开始形成判断。",
+     |                     ^^^^^^^^^^
+  80 | ...ary-2026-03-22.jpg",
+  81 | ...
+  82 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[29179794ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15:0
+[29180247ms] Error: ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -330,7 +188,7 @@ Import traces:
     at DevServer.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
     at DevServer.findPageComponents (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
     at async DevServer.renderErrorToResponseImpl (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/base-server.js:1745:26)
-[29754920ms] [ERROR] ./src/app/page.tsx:79:61
+[29180294ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -350,7 +208,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29754932ms] [ERROR] ./src/app/page.tsx:79:61
+[29180337ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -370,7 +228,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29754992ms] [ERROR] ./src/app/page.tsx:79:61
+[29180409ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -390,7 +248,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755042ms] [ERROR] ./src/app/page.tsx:79:61
+[29180461ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -410,7 +268,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755092ms] [ERROR] ./src/app/page.tsx:79:61
+[29180511ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -430,7 +288,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755146ms] [ERROR] ./src/app/page.tsx:79:61
+[29180563ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -450,7 +308,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755209ms] [ERROR] ./src/app/page.tsx:79:61
+[29180626ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -470,7 +328,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755270ms] [ERROR] ./src/app/page.tsx:79:61
+[29180688ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -490,7 +348,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755329ms] [ERROR] ./src/app/page.tsx:79:61
+[29180741ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -510,7 +368,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755392ms] [ERROR] ./src/app/page.tsx:79:61
+[29180808ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -530,7 +388,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755441ms] [ERROR] ./src/app/page.tsx:79:61
+[29180859ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -550,7 +408,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755493ms] [ERROR] ./src/app/page.tsx:79:61
+[29180910ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -570,7 +428,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755537ms] [ERROR] ./src/app/page.tsx:79:61
+[29180955ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -590,7 +448,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755585ms] [ERROR] ./src/app/page.tsx:79:61
+[29181003ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -610,7 +468,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755636ms] [ERROR] ./src/app/page.tsx:79:61
+[29181053ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -630,7 +488,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755685ms] [ERROR] ./src/app/page.tsx:79:61
+[29181103ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -650,7 +508,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755741ms] [ERROR] ./src/app/page.tsx:79:61
+[29181159ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -670,7 +528,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755794ms] [ERROR] ./src/app/page.tsx:79:61
+[29181212ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -690,7 +548,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755851ms] [ERROR] ./src/app/page.tsx:79:61
+[29181269ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -710,7 +568,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755900ms] [ERROR] ./src/app/page.tsx:79:61
+[29181318ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -730,7 +588,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755949ms] [ERROR] ./src/app/page.tsx:79:61
+[29181367ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -750,7 +608,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29755999ms] [ERROR] ./src/app/page.tsx:79:61
+[29181417ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -770,7 +628,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756048ms] [ERROR] ./src/app/page.tsx:79:61
+[29181465ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -790,7 +648,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756097ms] [ERROR] ./src/app/page.tsx:79:61
+[29181515ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -810,7 +668,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756148ms] [ERROR] ./src/app/page.tsx:79:61
+[29181565ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -830,7 +688,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756197ms] [ERROR] ./src/app/page.tsx:79:61
+[29181615ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -850,7 +708,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756246ms] [ERROR] ./src/app/page.tsx:79:61
+[29181664ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -870,7 +728,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756296ms] [ERROR] ./src/app/page.tsx:79:61
+[29181723ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -890,7 +748,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756363ms] [ERROR] ./src/app/page.tsx:79:61
+[29181782ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -910,7 +768,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756412ms] [ERROR] ./src/app/page.tsx:79:61
+[29181830ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -930,7 +788,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756461ms] [ERROR] ./src/app/page.tsx:79:61
+[29181879ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -950,7 +808,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756509ms] [ERROR] ./src/app/page.tsx:79:61
+[29181927ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -970,7 +828,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756559ms] [ERROR] ./src/app/page.tsx:79:61
+[29181977ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -990,7 +848,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756609ms] [ERROR] ./src/app/page.tsx:79:61
+[29182027ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1010,7 +868,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756659ms] [ERROR] ./src/app/page.tsx:79:61
+[29182076ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1030,7 +888,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756708ms] [ERROR] ./src/app/page.tsx:79:61
+[29182126ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1050,7 +908,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756767ms] [ERROR] ./src/app/page.tsx:79:61
+[29182177ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1070,7 +928,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756823ms] [ERROR] ./src/app/page.tsx:79:61
+[29182241ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1090,7 +948,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756872ms] [ERROR] ./src/app/page.tsx:79:61
+[29182290ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1110,7 +968,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756922ms] [ERROR] ./src/app/page.tsx:79:61
+[29182340ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1130,7 +988,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29756970ms] [ERROR] ./src/app/page.tsx:79:61
+[29182387ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1150,7 +1008,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757018ms] [ERROR] ./src/app/page.tsx:79:61
+[29182436ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1170,7 +1028,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757069ms] [ERROR] ./src/app/page.tsx:79:61
+[29182486ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1190,7 +1048,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757119ms] [ERROR] ./src/app/page.tsx:79:61
+[29182537ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1210,7 +1068,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757169ms] [ERROR] ./src/app/page.tsx:79:61
+[29182587ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1230,7 +1088,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757244ms] [ERROR] ./src/app/page.tsx:79:61
+[29182662ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1250,7 +1108,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757293ms] [ERROR] ./src/app/page.tsx:79:61
+[29182711ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1270,7 +1128,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757342ms] [ERROR] ./src/app/page.tsx:79:61
+[29182760ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1290,7 +1148,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757391ms] [ERROR] ./src/app/page.tsx:79:61
+[29182809ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1310,7 +1168,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757440ms] [ERROR] ./src/app/page.tsx:79:61
+[29182858ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
@@ -1330,7 +1188,7 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
-[29757490ms] [ERROR] ./src/app/page.tsx:79:61
+[29182908ms] [ERROR] ./src/app/page.tsx:79:61
 Expected ',', got 'ident'
   77 | ...
   78 | ...
