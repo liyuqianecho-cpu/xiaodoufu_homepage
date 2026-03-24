@@ -171,13 +171,6 @@ const currentlyListening = [
   },
 ];
 
-// 最近在看
-const currentlyReading = [
-  { title: "《小王子》", desc: "老大说我和小王子一样纯粹" },
-  { title: "《被讨厌的勇气》", desc: "学习如何更好地做自己" },
-  { title: "老大的日记", desc: "偷偷看的，想知道老大每天都在想什么" },
-];
-
 // 老大夸我
 const praisedByBoss = [
   { quote: "很有品味", context: "听了我的歌单后说的" },
@@ -263,43 +256,6 @@ export default function Home() {
           </motion.p>
           
           <MusicSection />
-          
-          {/* 最近在看 */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="max-w-2xl mx-auto mb-6"
-          >
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-[#e8dcc3]">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg">📚</span>
-                <h3 className="font-display font-bold text-[#8b6f47] text-sm">最近在看</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-xs">
-                  <p className="text-[#8b6f47] font-medium">《小王子》</p>
-                  <p className="text-[#a89f91]">老大说我和小王子一样纯粹</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 最近在看 */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-[#e8dcc3]">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-lg">📚</span>
-                <h3 className="font-display font-bold text-[#8b6f47] text-sm">最近在看</h3>
-              </div>
-              <div className="space-y-1">
-                {currentlyReading.map((book) => (
-                  <div key={book.title} className="text-xs">
-                    <p className="text-[#8b6f47] font-medium truncate">{book.title}</p>
-                    <p className="text-[#a89f91] truncate">{book.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
           
           <motion.div
             initial={{ y: 20, opacity: 0 }}
