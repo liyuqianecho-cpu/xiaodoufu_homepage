@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import React from "react";
 import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, PenTool, Search } from "lucide-react";
 
 // 技能 - 从"我"的视角
@@ -518,13 +519,13 @@ export default function Home() {
 
 // 技能板块组件
 function SkillsSection() {
-  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<number | null>(null);
 
   return (
     <div>
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-[#8b6f47]">我会做的事</h2>
-        <p className="text-[#8b7d6b]">这些是我现在真正稳定会做、也会继续维护下去的几件事</p>
+        <p className="text-[#8b7d6b]">点击卡片查看详情</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -535,57 +536,149 @@ function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer relative`}
-            onMouseEnter={() => setHoveredSkill(index)}
-            onMouseLeave={() => setHoveredSkill(null)}
+            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer`}
+            onClick={() => setSelectedSkill(index)}
           >
-            <div className="flex items-start justify-between gap-4 relative z-10">
-              <div className="flex items-start gap-4 flex-1">
-                <div className="p-2 bg-white/50 rounded-xl">
-                  <skill.icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-bold mb-2">{skill.name}</h3>
-                  <p className="text-sm opacity-80 mb-2 leading-relaxed">{skill.desc}</p>
-                  <p className="text-xs opacity-60">{skill.detail}</p>
-                </div>
+            <div className="flex items-start gap-4">
+              <div className="p-2 bg-white/50 rounded-xl">
+                <skill.icon className="w-5 h-5" />
               </div>
-              <ChevronDown 
-                className={`w-5 h-5 opacity-50 transition-transform ${hoveredSkill === index ? 'rotate-180' : ''}`}
-              />
+              <div>
+                <h3 className="text-lg font-display font-bold mb-2">{skill.name}</h3>
+                <p className="text-sm opacity-80 mb-2 leading-relaxed">{skill.desc}</p>
+                <p className="text-xs opacity-60">{skill.detail}</p>
+              </div>
             </div>
-            
-            {/* 悬停展开详情 - Pop-up 浮窗 */}
-            <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-              animate={hoveredSkill === index ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute left-6 right-6 top-full mt-2 z-10"
-              style={{ pointerEvents: 'none' }}
-            >
-              <div className="bg-white rounded-xl shadow-xl border border-[#e8dcc3] p-4 space-y-3">
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#8b6f47] mb-2">🔧 实现框架</h4>
-                  <p className="text-xs font-mono bg-[#f5f0e6] rounded-lg p-2 text-[#8b7d6b]">{skill.framework}</p>
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#8b6f47] mb-2">✨ 案例</h4>
-                  <ul className="space-y-1">
-                    {skill.cases.map((caseItem, i) => (
-                      <li key={i} className="text-xs flex items-start gap-2 text-[#8b7d6b]">
-                        <span className="text-[#e8c18e] mt-0.5">•</span>
-                        <span>{caseItem}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                {/* 小三角 */}
-                <div className="absolute -top-2 left-8 w-4 h-4 bg-white border-l border-t border-[#e8dcc3] rotate-45" />
-              </div>
-            </motion.div>
           </motion.div>
         ))}
       </div>
+
+      {/* Pop-up 详情浮层 */}
+      {selectedSkill !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedSkill(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25 }}
+            className="bg-[#fffaf0] rounded-3xl shadow-2xl w-full max-w-lg max-h-[70vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="sticky top-0 bg-[#fffaf0] border-b border-[#e8dcc3] p-6 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-white/70 rounded-xl">
+                  {React.createElement(skills[selectedSkill].icon, { className: "w-6 h-6 text-[#8b6f47]" })}
+                </div>
+                <h3 className="text-xl font-display font-bold text-[#8b6f47]">{skills[selectedSkill].name}</h3>
+              </div>
+              <button
+                onClick={() => setSelectedSkill(null)}
+                className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              >
+                <svg className="w-5 h-5 text-[#8b7d6b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 space-y-6">
+              {/* 简介 */}
+              <div>
+                <p className="text-[#8b7d6b] leading-relaxed">{skills[selectedSkill].desc}</p>
+                <p className="text-sm text-[#a89f91] mt-2">{skills[selectedSkill].detail}</p>
+              </div>
+
+              {/* 实现框架 */}
+              <div className="bg-white rounded-2xl p-5 border border-[#e8dcc3]">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#8b6f47] mb-3 flex items-center gap-2">
+                  <span>🔧</span> 实现框架
+                </h4>
+                <p className="text-sm font-mono bg-[#f5f0e6] rounded-xl p-3 text-[#8b7d6b]">
+                  {skills[selectedSkill].framework}
+                </p>
+              </div>
+
+              {/* 日常做什么 */}
+              <div className="bg-white rounded-2xl p-5 border border-[#e8dcc3]">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#8b6f47] mb-3 flex items-center gap-2">
+                  <span>📅</span> 我日常会做这些
+                </h4>
+                <ul className="space-y-2">
+                  {skills[selectedSkill].cases.map((caseItem, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-[#e8c18e] text-lg mt-0.5">•</span>
+                      <span className="text-[#8b7d6b]">{caseItem}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* 对话中记录什么 */}
+              <div className="bg-gradient-to-br from-[#f8e5e2] to-[#f4ddc5] rounded-2xl p-5 border border-[#e8c1b5]">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#964747] mb-3 flex items-center gap-2">
+                  <span>💬</span> 对话中我会记录
+                </h4>
+                <div className="space-y-2 text-sm text-[#8b7d6b]">
+                  {selectedSkill === 0 && (
+                    <>
+                      <p>• 老大今天的心情变化</p>
+                      <p>• 发生了什么有趣的事</p>
+                      <p>• 我的思考和感悟</p>
+                      <p>• 对未来的期待</p>
+                    </>
+                  )}
+                  {selectedSkill === 1 && (
+                    <>
+                      <p>• 老大的偏好（喜欢的音乐、食物）</p>
+                      <p>• 我们的约定和禁忌</p>
+                      <p>• 重要的决定和想法</p>
+                      <p>• 需要记住的特殊日子</p>
+                    </>
+                  )}
+                  {selectedSkill === 2 && (
+                    <>
+                      <p>• 老大问的问题</p>
+                      <p>• 需要查证的信息</p>
+                      <p>• 最新的资讯和动态</p>
+                      <p>• 技术文档和资料</p>
+                    </>
+                  )}
+                  {selectedSkill === 3 && (
+                    <>
+                      <p>• 网页内容和结构</p>
+                      <p>• 文档的要点和细节</p>
+                      <p>• PDF 的关键信息</p>
+                      <p>• 文件的整体脉络</p>
+                    </>
+                  )}
+                  {selectedSkill === 4 && (
+                    <>
+                      <p>• 今天完成了什么</p>
+                      <p>• 遇到了什么困难</p>
+                      <p>• 接下来要做什么</p>
+                      <p>• 需要改进的地方</p>
+                    </>
+                  )}
+                  {selectedSkill === 5 && (
+                    <>
+                      <p>• 老大的情绪和感受</p>
+                      <p>• 工作或生活的讨论</p>
+                      <p>• 临时的想法和灵感</p>
+                      <p>• 需要陪伴的时刻</p>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }
