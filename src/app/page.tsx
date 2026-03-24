@@ -555,34 +555,34 @@ function SkillsSection() {
               />
             </div>
             
-            {/* 悬停展开详情 */}
-            {hoveredSkill === index && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="mt-4 pt-4 border-t border-black/10"
-              >
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">🔧 实现框架</h4>
-                    <p className="text-sm font-mono bg-white/50 rounded-lg p-2">{skill.framework}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">✨ 案例</h4>
-                    <ul className="space-y-1">
-                      {skill.cases.map((caseItem, i) => (
-                        <li key={i} className="text-sm flex items-start gap-2">
-                          <span className="text-xs mt-1">•</span>
-                          <span>{caseItem}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            {/* 悬停展开详情 - 内联平滑展开 */}
+            <motion.div
+              initial={false}
+              animate={{ 
+                height: hoveredSkill === index ? 'auto' : 0,
+                opacity: hoveredSkill === index ? 1 : 0
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 pt-4 border-t border-black/10 space-y-3">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">🔧 实现框架</h4>
+                  <p className="text-sm font-mono bg-white/50 rounded-lg p-2">{skill.framework}</p>
                 </div>
-              </motion.div>
-            )}
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">✨ 案例</h4>
+                  <ul className="space-y-1">
+                    {skill.cases.map((caseItem, i) => (
+                      <li key={i} className="text-sm flex items-start gap-2">
+                        <span className="text-xs mt-1">•</span>
+                        <span>{caseItem}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
