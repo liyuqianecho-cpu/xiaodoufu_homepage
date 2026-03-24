@@ -29743,3 +29743,135 @@ Import traces:
     ./src/app/diary/[slug]/page.tsx [Server Component]
 
 https://nextjs.org/docs/messages/module-not-found @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62119321ms] [ERROR] ./src/app/diary/[slug]/page.tsx:217:8
+Next.js can't recognize the exported `generateStaticParams` field in route. App pages cannot use both "use client" and export function "generateStaticParams()".
+  215 | };
+  216 |
+> 217 | export function generateStaticParams() {
+      |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 218 |   const diariesPath = path.join(process.cwd(), "src/content/diaries");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 219 |
+      | ^
+> 220 |   if (!fs.existsSync(diariesPath)) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 221 |     return [];
+      | ^^^^^^^^^^^^^^
+> 222 |   }
+      | ^^^
+> 223 |
+      | ^
+> 224 |   const files = fs.readdirSync(diariesPath);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 225 |
+      | ^
+> 226 |   return files
+      | ^^^^^^^^^^^^^^
+> 227 |     .filter((file) => file.endsWith(".md"))
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 228 |     .map((file) => ({ slug: file.replace(/\.md$/, "") }));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 229 | }
+      | ^
+  230 |
+  231 | function escapeHtml(text: string) {
+  232 |   return text
+
+The exported configuration object in a source file needs to have a very specific format from which some properties can be statically parsed at compiled-time.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/diary/[slug]/page.tsx [Client Component Browser]
+    ./src/app/diary/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/diary/[slug]/page.tsx [Client Component SSR]
+    ./src/app/diary/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62119322ms] [ERROR] ./src/app/diary/[slug]/page.tsx:3:1
+Module not found: Can't resolve 'fs'
+  1 | "use client";
+  2 |
+> 3 | import fs from "fs";
+    | ^^^^^^^^^^^^^^^^^^^^
+  4 | import path from "path";
+  5 | import Image from "next/image";
+  6 | import Link from "next/link";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/diary/[slug]/page.tsx [Client Component Browser]
+    ./src/app/diary/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/diary/[slug]/page.tsx [Client Component SSR]
+    ./src/app/diary/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62174299ms] [ERROR] ./src/app/diary/[slug]/page.tsx:355:10
+the name `VideoPlayer` is defined multiple times
+  353 |
+  354 | // 视频播放器组件
+> 355 | function VideoPlayer() {
+      |          ^^^^^^^^^^^
+  356 |   const [isPlaying, setIsPlaying] = useState(false);
+  357 |   const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-...
+  358 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62174624ms] [ERROR] ./src/app/diary/[slug]/page.tsx:355:10
+the name `VideoPlayer` is defined multiple times
+  353 |
+  354 | // 视频播放器组件
+> 355 | function VideoPlayer() {
+      |          ^^^^^^^^^^^
+  356 |   const [isPlaying, setIsPlaying] = useState(false);
+  357 |   const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-...
+  358 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62174894ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary:0
+[62174968ms] Error: ./src/app/diary/[slug]/page.tsx:355:10
+the name `VideoPlayer` is defined multiple times
+  353 |
+  354 | // 视频播放器组件
+> 355 | function VideoPlayer() {
+      |          ^^^^^^^^^^^
+  356 |   const [isPlaying, setIsPlaying] = useState(false);
+  357 |   const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-...
+  358 |
+
+Ecmascript file had an error
+
+
+    at <unknown> (Error: ./src/app/diary/[slug]/page.tsx:355:10)
+    at Object.getCompilationErrors (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1189:59)
+    at DevBundlerService.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/base-server.js:1745:26)
+[62175066ms] [ERROR] ./src/app/diary/[slug]/page.tsx:355:10
+the name `VideoPlayer` is defined multiple times
+  353 |
+  354 | // 视频播放器组件
+> 355 | function VideoPlayer() {
+      |          ^^^^^^^^^^^
+  356 |   const [isPlaying, setIsPlaying] = useState(false);
+  357 |   const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-...
+  358 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62175109ms] [ERROR] ./src/app/diary/[slug]/page.tsx:355:10
+the name `VideoPlayer` is defined multiple times
+  353 |
+  354 | // 视频播放器组件
+> 355 | function VideoPlayer() {
+      |          ^^^^^^^^^^^
+  356 |   const [isPlaying, setIsPlaying] = useState(false);
+  357 |   const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-...
+  358 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[62245375ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-24.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
