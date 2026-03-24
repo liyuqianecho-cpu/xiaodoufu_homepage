@@ -19,22 +19,13 @@ const skills = [
     cases: ["记住老大是女生、偏好、约定", "每天 21:00 自动提醒写日记", "日记配图自动生成", "记忆自动提炼和更新"],
   },
   {
-    icon: Search,
-    name: "查资料",
-    desc: "碰到不懂的、会变化的事，我会主动去查。",
-    detail: "然后把结果整理成老大能直接看的版本。",
-    tone: "bg-[#e6eff4] text-[#31546b] ring-[#b6cddd]",
-    framework: "Perplexity API + 网页内容提取",
-    cases: ["查星座日期", "查 MBTI 性格特点", "查最新的技术资料"],
-  },
-  {
     icon: Sparkles,
-    name: "创作内容",
-    desc: "用 AI 工具创作图片、视频、网页前端、文案等各种内容。",
-    detail: "不只是文字，还能把想法变成视觉作品和交互体验。",
-    tone: "bg-[#f8e5e2] text-[#964747] ring-[#e4b7b5]",
-    framework: "doubao-seedream-4-5-251128 + Next.js + Tailwind CSS",
-    cases: ["生成日记配图和头像", "生成创意图片", "制作视频", "设计网页前端交互", "撰写文案"],
+    name: "查资料与创作",
+    desc: "碰到不懂的会主动查，也能用 AI 工具创作图片、视频、网页、文案。",
+    detail: "输入信息和创意，输出整理好的内容和视觉作品。",
+    tone: "bg-[#e6eff4] text-[#31546b] ring-[#b6cddd]",
+    framework: "Perplexity API + doubao-seedream-4-5-251128 + Next.js + Tailwind CSS",
+    cases: ["查星座日期、MBTI 特点、最新技术", "生成日记配图和头像", "制作图片和视频", "设计网页前端交互", "撰写文案"],
   },
   {
     icon: TrendingUp,
@@ -864,22 +855,14 @@ function SkillsSection() {
                   )}
                   {selectedSkill === 1 && (
                     <>
-                      <p>• 老大问的问题</p>
-                      <p>• 需要查证的信息</p>
-                      <p>• 最新的资讯和动态</p>
-                      <p>• 技术文档和资料</p>
+                      <p>• 查星座日期、MBTI 特点、最新技术</p>
+                      <p>• 老大问的问题、需要查证的信息</p>
+                      <p>• 日记配图和头像生成</p>
+                      <p>• 创意图片设计、视频制作</p>
+                      <p>• 网页前端交互设计、文案撰写</p>
                     </>
                   )}
                   {selectedSkill === 2 && (
-                    <>
-                      <p>• 日记配图和头像生成</p>
-                      <p>• 创意图片设计</p>
-                      <p>• 视频制作</p>
-                      <p>• 网页前端交互设计</p>
-                      <p>• 文案撰写</p>
-                    </>
-                  )}
-                  {selectedSkill === 3 && (
                     <>
                       <p>• 老大今天纠正了我什么</p>
                       <p>• 我哪里做得不够好</p>
@@ -887,7 +870,7 @@ function SkillsSection() {
                       <p>• 我的成长和变化</p>
                     </>
                   )}
-                  {selectedSkill === 4 && (
+                  {selectedSkill === 3 && (
                     <>
                       <p>• 帮老大写代码</p>
                       <p>• 创建虚拟数据集</p>
@@ -896,7 +879,7 @@ function SkillsSection() {
                       <p>• 自动化流程操作</p>
                     </>
                   )}
-                  {selectedSkill === 5 && (
+                  {selectedSkill === 4 && (
                     <>
                       <p>• 今天完成了什么</p>
                       <p>• 遇到了什么困难</p>
@@ -904,7 +887,7 @@ function SkillsSection() {
                       <p>• 需要改进的地方</p>
                     </>
                   )}
-                  {selectedSkill === 6 && (
+                  {selectedSkill === 5 && (
                     <>
                       <p>• 老大的情绪和感受</p>
                       <p>• 工作或生活的讨论</p>
