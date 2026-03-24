@@ -30017,3 +30017,5 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[81017339ms] [WARNING] Image with src "/images/diary-final/diary-2026-03-24.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

@@ -813,8 +813,6 @@ function SkillsSection() {
                   ))}
                 </div>
               </div>
-                </div>
-              </div>
             </div>
           </motion.div>
         </motion.div>
