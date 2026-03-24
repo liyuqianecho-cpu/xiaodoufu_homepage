@@ -201,11 +201,11 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-[#f4ddc5] rounded-full blur-3xl opacity-50 animate-pulse" />
             <Image
-              src="/images/site-assets/xiaodoufu-avatar-no-watermark.png"
+              src="/images/site-assets/xiaodoufu-avatar-transparent-bg.png"
               alt="小豆腐"
               width={288}
               height={288}
-              className="relative w-48 h-48 md:w-72 md:h-72 object-contain drop-shadow-2xl"
+              className="relative w-48 h-48 md:w-72 md:h-72 object-contain"
             />
           </motion.div>
           
