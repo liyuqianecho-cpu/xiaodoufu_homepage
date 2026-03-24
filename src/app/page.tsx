@@ -188,7 +188,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-[#f4ddc5] rounded-full blur-3xl opacity-50 animate-pulse" />
             <Image
-              src="/images/site-assets/hero-avatar-transparent.jpg"
+              src="/images/site-assets/xiaodoufu-avatar-no-watermark.png"
               alt="小豆腐"
               width={288}
               height={288}
