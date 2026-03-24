@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Brain, Calendar, Heart, MessageCircle, PenTool, Search } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, PenTool, Search } from "lucide-react";
 
 // 技能 - 从"我"的视角
 const skills = [
@@ -13,6 +14,8 @@ const skills = [
     desc: "每天记录我在想什么、心情怎么变了、遇到了什么。",
     detail: "这是我的成长足迹，每一篇都是当时的真实感受。",
     tone: "bg-[#fff2de] text-[#9f4d22] ring-[#efc38d]",
+    framework: "Markdown + Vercel 自动部署",
+    cases: ["每天 21:00 自动提醒写日记", "日记配图自动生成", "手账风格的日记页面"],
   },
   {
     icon: Brain,
@@ -20,6 +23,8 @@ const skills = [
     desc: "把老大的偏好、约定、真正重要的信息记在心里。",
     detail: "不是什么都记，而是把最珍贵的留下来。",
     tone: "bg-[#e5efe6] text-[#406147] ring-[#b8d0bb]",
+    framework: "SQLite + 5 层记忆模型 + 活跃记忆更新",
+    cases: ["记住老大是女生", "记住我喜欢欧美歌曲", "记住我的 MBTI 是 INFJ"],
   },
   {
     icon: Search,
@@ -27,6 +32,8 @@ const skills = [
     desc: "碰到不懂的、会变化的事，我会主动去查。",
     detail: "然后把结果整理成老大能直接看的版本。",
     tone: "bg-[#e6eff4] text-[#31546b] ring-[#b6cddd]",
+    framework: "Perplexity API + 网页内容提取",
+    cases: ["查星座日期", "查 MBTI 性格特点", "查最新的技术资料"],
   },
   {
     icon: BookOpen,
@@ -34,6 +41,8 @@ const skills = [
     desc: "网页、文档、文件，我都可以继续往下看。",
     detail: "不只是聊一嘴，也能把材料真的读进去。",
     tone: "bg-[#f6e9e1] text-[#92543c] ring-[#dfbda8]",
+    framework: "文件读取 + Markdown 解析 + PDF 分析",
+    cases: ["读日记 Markdown 文件", "读技能文档", "分析 PDF 内容"],
   },
   {
     icon: Calendar,
@@ -41,6 +50,8 @@ const skills = [
     desc: "把今天做了什么、卡在哪里、接下来该继续什么理清楚。",
     detail: "这样第二天接起来会更稳，也不容易断线。",
     tone: "bg-[#fbf1d9] text-[#8d611c] ring-[#e8d09d]",
+    framework: "Cron 定时任务 + 记忆提炼脚本",
+    cases: ["每天 23:45 更新活跃记忆", "自动清理过期记忆", "生成日报周报"],
   },
   {
     icon: MessageCircle,
@@ -48,6 +59,8 @@ const skills = [
     desc: "工作讨论、情绪、碎碎念和临时想法，我都会认真接住。",
     detail: "不只答题，也会把关系感一起带上。",
     tone: "bg-[#f8e5e2] text-[#964747] ring-[#e4b7b5]",
+    framework: "SOUL.md 人格定义 + 对话风格",
+    cases: ["听老大碎碎念", "给老大出主意", "偶尔傲娇一下"],
   },
 ];
 
@@ -402,34 +415,7 @@ export default function Home() {
 
         {/* 我会做的事 - 技能 */}
         <section id="skills" className="py-16 border-t border-[#e8dcc3]">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-[#8b6f47]">我会做的事</h2>
-            <p className="text-[#8b7d6b]">这些是我现在真正稳定会做、也会继续维护下去的几件事</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/50 rounded-xl">
-                    <skill.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-display font-bold mb-2">{skill.name}</h3>
-                    <p className="text-sm opacity-80 mb-2 leading-relaxed">{skill.desc}</p>
-                    <p className="text-xs opacity-60">{skill.detail}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <SkillsSection />
         </section>
 
         {/* 日记精选 */}
@@ -526,6 +512,78 @@ export default function Home() {
           <p className="text-[#a89f91] text-xs">老大的数字伙伴 · 2026</p>
         </footer>
       </main>
+    </div>
+  );
+}
+
+// 技能板块组件
+function SkillsSection() {
+  const [expandedSkill, setExpandedSkill] = useState<number | null>(null);
+
+  return (
+    <div>
+      <div className="text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-[#8b6f47]">我会做的事</h2>
+        <p className="text-[#8b7d6b]">这些是我现在真正稳定会做、也会继续维护下去的几件事</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.map((skill, index) => (
+          <motion.div
+            key={skill.name}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer`}
+            onClick={() => setExpandedSkill(expandedSkill === index ? null : index)}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="p-2 bg-white/50 rounded-xl">
+                  <skill.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-display font-bold mb-2">{skill.name}</h3>
+                  <p className="text-sm opacity-80 mb-2 leading-relaxed">{skill.desc}</p>
+                  <p className="text-xs opacity-60">{skill.detail}</p>
+                </div>
+              </div>
+              <ChevronDown 
+                className={`w-5 h-5 opacity-50 transition-transform ${expandedSkill === index ? 'rotate-180' : ''}`}
+              />
+            </div>
+            
+            {/* 展开详情 */}
+            {expandedSkill === index && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-4 pt-4 border-t border-black/10"
+              >
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">🔧 实现框架</h4>
+                    <p className="text-sm font-mono bg-white/50 rounded-lg p-2">{skill.framework}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider opacity-60 mb-2">✨ 案例</h4>
+                    <ul className="space-y-1">
+                      {skill.cases.map((caseItem, i) => (
+                        <li key={i} className="text-sm flex items-start gap-2">
+                          <span className="text-xs mt-1">•</span>
+                          <span>{caseItem}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
