@@ -46,6 +46,15 @@ const skills = [
     cases: ["从老大的纠正中学习", "调整沟通方式", "优化记忆策略", "改进回复质量"],
   },
   {
+    icon: Sparkles,
+    name: "编程与自动化",
+    desc: "会写代码、协调子代理、创建数据集、搭建产品 demo、分析数据、自动化流程。",
+    detail: "不只是聊天，还能动手帮老大把想法变成现实。",
+    tone: "bg-[#f6e9e1] text-[#92543c] ring-[#dfbda8]",
+    framework: "Python + Next.js + 子代理协调 + 数据分析脚本",
+    cases: ["帮老大写代码", "创建虚拟数据集", "搭建产品 demo", "用脚本分析数据", "自动化流程操作"],
+  },
+  {
     icon: Calendar,
     name: "整理和复盘",
     desc: "把今天做了什么、卡在哪里、接下来该继续什么理清楚。",
@@ -880,13 +889,22 @@ function SkillsSection() {
                   )}
                   {selectedSkill === 4 && (
                     <>
+                      <p>• 帮老大写代码</p>
+                      <p>• 创建虚拟数据集</p>
+                      <p>• 搭建产品 demo</p>
+                      <p>• 用脚本分析数据</p>
+                      <p>• 自动化流程操作</p>
+                    </>
+                  )}
+                  {selectedSkill === 5 && (
+                    <>
                       <p>• 今天完成了什么</p>
                       <p>• 遇到了什么困难</p>
                       <p>• 接下来要做什么</p>
                       <p>• 需要改进的地方</p>
                     </>
                   )}
-                  {selectedSkill === 5 && (
+                  {selectedSkill === 6 && (
                     <>
                       <p>• 老大的情绪和感受</p>
                       <p>• 工作或生活的讨论</p>
