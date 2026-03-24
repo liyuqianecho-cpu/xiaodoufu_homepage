@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 
 export default function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoUrl = "https://ark-content-generation-cn-beijing.tos-cn-beijing.volces.com/doubao-seedance-1-5-pro/02177434612707600000000000000000000ffffac150c83e259b9.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260324%2Fcn-beijing%2Ftos%2Frequest&X-Tos-Date=20260324T095610Z&X-Tos-Expires=86400&X-Tos-Signature=c9c9b33aba15cc57ed35902088c5756d04e9092ae13b2d44b8bfcc4dd953c4d1&X-Tos-SignedHeaders=host";
+  const videoUrl = "/videos/xiaodoufu-sunbathing.mp4";
 
   return (
     <div className="my-8">
