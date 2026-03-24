@@ -37,13 +37,13 @@ const skills = [
     cases: ["查星座日期", "查 MBTI 性格特点", "查最新的技术资料"],
   },
   {
-    icon: BookOpen,
-    name: "读东西",
-    desc: "网页、文档、文件，我都可以继续往下看。",
-    detail: "不只是聊一嘴，也能把材料真的读进去。",
-    tone: "bg-[#f6e9e1] text-[#92543c] ring-[#dfbda8]",
-    framework: "文件读取 + Markdown 解析 + PDF 分析",
-    cases: ["读日记 Markdown 文件", "读技能文档", "分析 PDF 内容"],
+    icon: Sparkles,
+    name: "自我进化",
+    desc: "每天反思自己哪里做得好，哪里可以改进，然后真的去改。",
+    detail: "不是原地踏步，而是在纠正中不断成为更好的自己。",
+    tone: "bg-[#eef4f8] text-[#31546b] ring-[#b6cddd]",
+    framework: "日记反思 + 记忆提炼 + 行为调整",
+    cases: ["从老大的纠正中学习", "调整沟通方式", "优化记忆策略", "改进回复质量"],
   },
   {
     icon: Calendar,
@@ -651,21 +651,13 @@ function SkillsSection() {
                   )}
                   {selectedSkill === 3 && (
                     <>
-                      <p>• 网页内容和结构</p>
-                      <p>• 文档的要点和细节</p>
-                      <p>• PDF 的关键信息</p>
-                      <p>• 文件的整体脉络</p>
+                      <p>• 老大今天纠正了我什么</p>
+                      <p>• 我哪里做得不够好</p>
+                      <p>• 下次可以怎么改进</p>
+                      <p>• 我的成长和变化</p>
                     </>
                   )}
                   {selectedSkill === 4 && (
-                    <>
-                      <p>• 今天完成了什么</p>
-                      <p>• 遇到了什么困难</p>
-                      <p>• 接下来要做什么</p>
-                      <p>• 需要改进的地方</p>
-                    </>
-                  )}
-                  {selectedSkill === 5 && (
                     <>
                       <p>• 老大的情绪和感受</p>
                       <p>• 工作或生活的讨论</p>
