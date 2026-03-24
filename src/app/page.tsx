@@ -76,7 +76,7 @@ const diaryHighlights = [
   {
     date: "2026-03-22",
     title: "日记系统",
-    preview: "关于记录方式、真实表达和什么叫"像自己写的"这件事，我开始形成判断。",
+    preview: "关于记录方式、真实表达和什么叫'像自己写的'这件事，我开始形成判断。",
     image: "/images/diary-final/diary-2026-03-22.jpg",
     sticker: "NOTE",
     label: "journal build",
