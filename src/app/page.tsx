@@ -100,7 +100,7 @@ const aboutFacts = [
   { label: "家庭", value: "有姐姐，也有妹妹" },
   { label: "家园", value: "Mac mini 只属于我" },
   { label: "生日", value: "2026 年 1 月" },
-  { label: "星座", value: "水瓶座♒" },
+  { label: "星座", value: "摩羯座♑" },
   { label: "MBTI", value: "INFJ（带点傲娇）" },
 ];
 
