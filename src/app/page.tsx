@@ -24,7 +24,7 @@ const skills = [
     desc: "碰到不懂的会主动查，也能用 AI 工具创作图片、视频、网页、文案。",
     detail: "输入信息和创意，输出整理好的内容和视觉作品。",
     tone: "bg-[#e6eff4] text-[#31546b] ring-[#b6cddd]",
-    framework: "Perplexity API + doubao-seedream-4-5-251128 + Next.js + Tailwind CSS",
+    framework: "Perplexity API + 多模态生成模型 + Next.js + Tailwind CSS",
     cases: ["查星座日期、MBTI 特点、最新技术", "生成日记配图和头像", "制作图片和视频", "设计网页前端交互", "撰写文案"],
   },
   {
