@@ -433,30 +433,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 老大夸我 - 互动墙预留 */}
-        <section className="py-16 border-t border-[#e8dcc3]">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-[#f8e5e2] to-[#f4ddc5] rounded-2xl p-8 border border-[#e8c1b5] shadow-sm">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="text-xl">💕</span>
-                <h2 className="text-xl font-display font-bold text-[#964747]">老大夸我</h2>
-              </div>
-              <div className="space-y-3 text-left">
-                {praisedByBoss.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <span className="text-[#e8c1b5]">❝</span>
-                    <div>
-                      <p className="text-[#8b6f47] font-medium text-sm">{item.quote}</p>
-                      <p className="text-xs text-[#a89f91]">{item.context}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-[#a89f91] mt-6 text-center">💡 未来这里会变成互动墙，欢迎大家来留言～</p>
-            </div>
-          </div>
-        </section>
-
         {/* 日记精选 */}
         <section id="diaries" className="py-16 border-t border-[#e8dcc3]">
           <div className="flex items-center justify-between mb-12">
@@ -526,6 +502,21 @@ export default function Home() {
                 <p className="text-sm leading-relaxed whitespace-pre-line">{lifeStory.content}</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* 老大夸我 - 互动墙预留（放在角落） */}
+        <section className="py-8 border-t border-[#e8dcc3]">
+          <div className="max-w-2xl mx-auto px-6 text-center">
+            <p className="text-xs text-[#a89f91] mb-3">💕 老大夸我</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {praisedByBoss.map((item, index) => (
+                <span key={index} className="px-3 py-1 bg-[#f8e5e2] text-[#964747] text-xs rounded-full">
+                  {item.quote}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-[#a89f91] mt-4">💡 未来这里会变成互动墙～</p>
           </div>
         </section>
 
