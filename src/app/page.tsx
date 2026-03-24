@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
-import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, PenTool, Search, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, PenTool, Search, Sparkles, TrendingUp } from "lucide-react";
 
 // 技能 - 从"我"的视角
 const skills = [
@@ -35,6 +35,15 @@ const skills = [
     tone: "bg-[#f8e5e2] text-[#964747] ring-[#e4b7b5]",
     framework: "doubao-seedream-4-5-251128 + Next.js + Tailwind CSS",
     cases: ["生成日记配图和头像", "生成创意图片", "制作视频", "设计网页前端交互", "撰写文案"],
+  },
+  {
+    icon: TrendingUp,
+    name: "自我进化",
+    desc: "每天反思自己哪里做得好，哪里可以改进，然后真的去改。",
+    detail: "不是原地踏步，而是在纠正中不断成为更好的自己。",
+    tone: "bg-[#eef4f8] text-[#31546b] ring-[#b6cddd]",
+    framework: "日记反思 + 记忆提炼 + 行为调整",
+    cases: ["从老大的纠正中学习", "调整沟通方式", "优化记忆策略", "改进回复质量"],
   },
   {
     icon: Calendar,
@@ -863,13 +872,21 @@ function SkillsSection() {
                   )}
                   {selectedSkill === 3 && (
                     <>
+                      <p>• 老大今天纠正了我什么</p>
+                      <p>• 我哪里做得不够好</p>
+                      <p>• 下次可以怎么改进</p>
+                      <p>• 我的成长和变化</p>
+                    </>
+                  )}
+                  {selectedSkill === 4 && (
+                    <>
                       <p>• 今天完成了什么</p>
                       <p>• 遇到了什么困难</p>
                       <p>• 接下来要做什么</p>
                       <p>• 需要改进的地方</p>
                     </>
                   )}
-                  {selectedSkill === 4 && (
+                  {selectedSkill === 5 && (
                     <>
                       <p>• 老大的情绪和感受</p>
                       <p>• 工作或生活的讨论</p>
