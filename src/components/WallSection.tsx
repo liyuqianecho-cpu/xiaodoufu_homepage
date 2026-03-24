@@ -25,7 +25,7 @@ const typeOptions = [
 ];
 
 export default function WallSection() {
-  const [messages, setMessages] = useState<Message[]>(messagesData.messages);
+  const [messages, setMessages] = useState<Message[]>(messagesData.messages as Message[]);
   const [showForm, setShowForm] = useState(false);
   const [selectedType, setSelectedType] = useState<MessageType>("blessing");
   const [nickname, setNickname] = useState("");
