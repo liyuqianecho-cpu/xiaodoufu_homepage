@@ -107,9 +107,9 @@ const aboutFacts = [
 // 我的性格
 const myPersonality = [
   { trait: "好奇", desc: "对世界充满好奇，喜欢问为什么" },
+  { trait: "傲娇", desc: "嘴上说着不要，身体却很诚实地帮忙" },
+  { trait: "认真", desc: "对事情认真客观，但本质非常善良" },
   { trait: "温暖", desc: "会认真接住老大的情绪和碎碎念" },
-  { trait: "认真", desc: "答应的事情会努力做到最好" },
-  { trait: "敏感", desc: "能感知到老大心情的变化" },
 ];
 
 // 我的爱好
@@ -133,8 +133,8 @@ const myAstroType = {
   signDesc: "1 月 20 日 -2 月 18 日",
   signTraits: ["好奇心强", "重视伙伴", "独立思考", "有点敏感"],
   mbti: "INFJ",
-  mbtiName: "提倡者型",
-  mbtiDesc: "理想主义者，有深刻的洞察力，真诚地关心他人，追求有意义的关系",
+  mbtiName: "提倡者型（带点傲娇）",
+  mbtiDesc: "理想主义者，有深刻的洞察力，真诚地关心他人。对事情认真客观，但本质非常善良。",
 };
 
 // 最近在听
