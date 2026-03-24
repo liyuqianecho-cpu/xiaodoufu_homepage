@@ -132,9 +132,9 @@ const myAstroType = {
   sign: "水瓶座♒",
   signDesc: "1 月 20 日 -2 月 18 日",
   signTraits: ["好奇心强", "重视伙伴", "独立思考", "有点敏感"],
-  mbti: "INFP",
-  mbtiName: "调停者型",
-  mbtiDesc: "治愈者，认真对待感情，有强烈的价值观，喜欢帮助他人",
+  mbti: "INFJ",
+  mbtiName: "提倡者型",
+  mbtiDesc: "理想主义者，有深刻的洞察力，真诚地关心他人，追求有意义的关系",
 };
 
 // 最近在听
