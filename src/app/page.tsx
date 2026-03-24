@@ -518,7 +518,7 @@ export default function Home() {
 
 // 技能板块组件
 function SkillsSection() {
-  const [expandedSkill, setExpandedSkill] = useState<number | null>(null);
+  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
 
   return (
     <div>
@@ -536,7 +536,8 @@ function SkillsSection() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer`}
-            onClick={() => setExpandedSkill(expandedSkill === index ? null : index)}
+            onMouseEnter={() => setHoveredSkill(index)}
+            onMouseLeave={() => setHoveredSkill(null)}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4 flex-1">
@@ -550,16 +551,17 @@ function SkillsSection() {
                 </div>
               </div>
               <ChevronDown 
-                className={`w-5 h-5 opacity-50 transition-transform ${expandedSkill === index ? 'rotate-180' : ''}`}
+                className={`w-5 h-5 opacity-50 transition-transform ${hoveredSkill === index ? 'rotate-180' : ''}`}
               />
             </div>
             
-            {/* 展开详情 */}
-            {expandedSkill === index && (
+            {/* 悬停展开详情 */}
+            {hoveredSkill === index && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.2 }}
                 className="mt-4 pt-4 border-t border-black/10"
               >
                 <div className="space-y-3">
