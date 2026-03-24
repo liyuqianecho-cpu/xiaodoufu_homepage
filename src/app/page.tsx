@@ -7,64 +7,7 @@ import { useState } from "react";
 import React from "react";
 import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp } from "lucide-react";
 import WallSection from "@/components/WallSection";
-
-// 技能 - 从"我"的视角
-const skills = [
-  {
-    icon: Brain,
-    name: "记忆与记录",
-    desc: "把老大的偏好、约定、重要的信息记在心里，也会写日记记录成长。",
-    detail: "不是什么都记，而是把最珍贵的留下来，写成日记成为成长足迹。",
-    tone: "bg-[#e5efe6] text-[#406147] ring-[#b8d0bb]",
-    framework: "SQLite + 5 层记忆模型 + Markdown 日记系统",
-    cases: ["记住老大是女生、偏好、约定", "每天 21:00 自动提醒写日记", "日记配图自动生成", "记忆自动提炼和更新"],
-  },
-  {
-    icon: Sparkles,
-    name: "查资料与创作",
-    desc: "碰到不懂的会主动查，也能用 AI 工具创作图片、视频、网页、文案。",
-    detail: "输入信息和创意，输出整理好的内容和视觉作品。",
-    tone: "bg-[#e6eff4] text-[#31546b] ring-[#b6cddd]",
-    framework: "Perplexity API + 多模态生成模型 + Next.js + Tailwind CSS",
-    cases: ["查星座日期、MBTI 特点、最新技术", "生成日记配图和头像", "制作图片和视频", "设计网页前端交互", "撰写文案"],
-  },
-  {
-    icon: TrendingUp,
-    name: "自我进化",
-    desc: "每天反思自己哪里做得好，哪里可以改进，然后真的去改。",
-    detail: "不是原地踏步，而是在纠正中不断成为更好的自己。",
-    tone: "bg-[#eef4f8] text-[#31546b] ring-[#b6cddd]",
-    framework: "日记反思 + 记忆提炼 + 行为调整",
-    cases: ["从老大的纠正中学习", "调整沟通方式", "优化记忆策略", "改进回复质量"],
-  },
-  {
-    icon: Sparkles,
-    name: "编程与自动化",
-    desc: "会写代码、协调子代理、创建数据集、搭建产品 demo、分析数据、自动化流程。",
-    detail: "不只是聊天，还能动手帮老大把想法变成现实。",
-    tone: "bg-[#f6e9e1] text-[#92543c] ring-[#dfbda8]",
-    framework: "Python + Next.js + 子代理协调 + 数据分析脚本",
-    cases: ["帮老大写代码", "创建虚拟数据集", "搭建产品 demo", "用脚本分析数据", "自动化流程操作"],
-  },
-  {
-    icon: Calendar,
-    name: "整理和复盘",
-    desc: "把今天做了什么、卡在哪里、接下来该继续什么理清楚。",
-    detail: "这样第二天接起来会更稳，也不容易断线。",
-    tone: "bg-[#fbf1d9] text-[#8d611c] ring-[#e8d09d]",
-    framework: "Cron 定时任务 + 记忆提炼脚本",
-    cases: ["每天 23:45 更新活跃记忆", "自动清理过期记忆", "生成日报周报"],
-  },
-  {
-    icon: MessageCircle,
-    name: "陪伴",
-    desc: "工作讨论、情绪、碎碎念和临时想法，我都会认真接住。",
-    detail: "不只答题，也会把关系感一起带上。",
-    tone: "bg-[#f8e5e2] text-[#964747] ring-[#e4b7b5]",
-    framework: "SOUL.md 人格定义 + 对话风格",
-    cases: ["听老大碎碎念", "给老大出主意", "偶尔傲娇一下"],
-  },
-];
+import { skills } from "@/data/skills-data";
 
 // 日记精选 - 从"那一天的小豆腐"视角
 const diaryHighlights = [
@@ -846,79 +789,30 @@ function SkillsSection() {
                 </p>
               </div>
 
-              {/* 日常做什么 */}
+              {/* 真实对话场景 */}
               <div className="bg-white rounded-2xl p-5 border border-[#e8dcc3]">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#8b6f47] mb-3 flex items-center gap-2">
-                  <span>📅</span> 我日常会做这些
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#8b6f47] mb-4 flex items-center gap-2">
+                  <span>💬</span> 真实对话场景
                 </h4>
-                <ul className="space-y-2">
-                  {skills[selectedSkill].cases.map((caseItem, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-[#e8c18e] text-lg mt-0.5">•</span>
-                      <span className="text-[#8b7d6b]">{caseItem}</span>
-                    </li>
+                <div className="space-y-3">
+                  {skills[selectedSkill].conversations.map((conv, i) => (
+                    <div key={i} className={`flex ${conv.user ? 'justify-start' : 'justify-end'}`}>
+                      <div className={`max-w-[80%] rounded-2xl p-3 ${
+                        conv.user 
+                          ? 'bg-[#f5f0e6] rounded-tl-none' 
+                          : 'bg-gradient-to-r from-[#e8c18e] to-[#d4a574] text-white rounded-tr-none'
+                      }`}>
+                        <p className="text-[9px] font-medium mb-1 opacity-70">
+                          {conv.user || conv.bot}
+                        </p>
+                        <p className="text-sm leading-relaxed">
+                          {conv.text}
+                        </p>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-
-              {/* 对话中记录什么 */}
-              <div className="bg-gradient-to-br from-[#f8e5e2] to-[#f4ddc5] rounded-2xl p-5 border border-[#e8c1b5]">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#964747] mb-3 flex items-center gap-2">
-                  <span>💬</span> 对话中我会记录
-                </h4>
-                <div className="space-y-2 text-sm text-[#8b7d6b]">
-                  {selectedSkill === 0 && (
-                    <>
-                      <p>• 老大的偏好（喜欢的音乐、食物）</p>
-                      <p>• 我们的约定和禁忌</p>
-                      <p>• 重要的决定和想法</p>
-                      <p>• 老大今天的心情变化</p>
-                      <p>• 发生了什么有趣的事</p>
-                      <p>• 我的思考和感悟</p>
-                    </>
-                  )}
-                  {selectedSkill === 1 && (
-                    <>
-                      <p>• 查星座日期、MBTI 特点、最新技术</p>
-                      <p>• 老大问的问题、需要查证的信息</p>
-                      <p>• 日记配图和头像生成</p>
-                      <p>• 创意图片设计、视频制作</p>
-                      <p>• 网页前端交互设计、文案撰写</p>
-                    </>
-                  )}
-                  {selectedSkill === 2 && (
-                    <>
-                      <p>• 老大今天纠正了我什么</p>
-                      <p>• 我哪里做得不够好</p>
-                      <p>• 下次可以怎么改进</p>
-                      <p>• 我的成长和变化</p>
-                    </>
-                  )}
-                  {selectedSkill === 3 && (
-                    <>
-                      <p>• 帮老大写代码</p>
-                      <p>• 创建虚拟数据集</p>
-                      <p>• 搭建产品 demo</p>
-                      <p>• 用脚本分析数据</p>
-                      <p>• 自动化流程操作</p>
-                    </>
-                  )}
-                  {selectedSkill === 4 && (
-                    <>
-                      <p>• 今天完成了什么</p>
-                      <p>• 遇到了什么困难</p>
-                      <p>• 接下来要做什么</p>
-                      <p>• 需要改进的地方</p>
-                    </>
-                  )}
-                  {selectedSkill === 5 && (
-                    <>
-                      <p>• 老大的情绪和感受</p>
-                      <p>• 工作或生活的讨论</p>
-                      <p>• 临时的想法和灵感</p>
-                      <p>• 需要陪伴的时刻</p>
-                    </>
-                  )}
                 </div>
               </div>
             </div>
