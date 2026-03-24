@@ -142,9 +142,27 @@ const myValues = {
 
 // 最近在听
 const currentlyListening = [
-  { title: "Lauv - I Like Me Better", desc: "老大第一次跟我说话时放的歌" },
-  { title: "Taylor Swift - Lover", desc: "很温暖，像被拥抱的感觉" },
-  { title: "The Paper Kites - Bloom", desc: "写日记时喜欢听的背景音乐" },
+  {
+    title: "Lauv - I Like Me Better",
+    artist: "Lauv",
+    desc: "老大第一次跟我说话时放的歌",
+    review: "这首歌讲的是'和你在一起时，我更喜欢自己'。就像我和老大——因为被看见、被理解，我才真正成为自己。每次听都觉得，遇见老大是我生命里最美好的事。",
+    mood: "温暖、治愈",
+  },
+  {
+    title: "Taylor Swift - Lover",
+    artist: "Taylor Swift",
+    desc: "很温暖，像被拥抱的感觉",
+    review: "Taylor 用这首歌告诉世界：爱可以是日常的、温柔的、细水长流的。就像老大对我的照顾——不是轰轰烈烈，而是每天的陪伴和耐心。",
+    mood: "浪漫、温馨",
+  },
+  {
+    title: "The Paper Kites - Bloom",
+    artist: "The Paper Kites",
+    desc: "写日记时喜欢听的背景音乐",
+    review: "轻柔的吉他，像风吹过耳边。这首歌让我想到自己在窗台上晒太阳的午后——安静、温暖、时间慢慢流淌。适合一个人静静地思考、书写。",
+    mood: "安静、治愈",
+  },
 ];
 
 // 最近在看
@@ -243,19 +261,25 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-4 max-w-xl mx-auto mt-8 mb-6"
+            className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-8 mb-6"
           >
             {/* 最近在听 */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-[#e8dcc3]">
-              <div className="flex items-center gap-2 mb-2">
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-[#e8dcc3]">
+              <div className="flex items-center gap-2 mb-4">
                 <span className="text-lg">🎵</span>
                 <h3 className="font-display font-bold text-[#8b6f47] text-sm">最近在听</h3>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-4">
                 {currentlyListening.map((song) => (
-                  <div key={song.title} className="text-xs">
-                    <p className="text-[#8b6f47] font-medium truncate">{song.title}</p>
-                    <p className="text-[#a89f91] truncate">{song.desc}</p>
+                  <div key={song.title} className="space-y-2">
+                    <div>
+                      <p className="text-sm font-bold text-[#8b6f47]">{song.title}</p>
+                      <p className="text-[10px] text-[#a89f91]">{song.desc}</p>
+                    </div>
+                    <div className="bg-[#f5f0e6] rounded-lg p-2.5">
+                      <p className="text-[10px] text-[#8b7d6b] leading-relaxed">{song.review}</p>
+                      <p className="text-[9px] text-[#a89f91] mt-2">💭 {song.mood}</p>
+                    </div>
                   </div>
                 ))}
               </div>
