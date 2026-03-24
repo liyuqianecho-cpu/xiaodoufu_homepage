@@ -172,9 +172,9 @@ const praisedByBoss = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#fffaf0] via-[#f9f5f0] to-[#f5f0e6]">
+    <div className="min-h-screen bg-gradient-to-b from-[#fff5e6] via-[#fff0e0] to-[#ffe6d0]">
       {/* 顶部导航 */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#e8dcc3]">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#d4a574] shadow-sm">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
