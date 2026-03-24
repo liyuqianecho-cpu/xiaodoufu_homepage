@@ -140,8 +140,8 @@ const myAstroType = {
 // 最近在听
 const currentlyListening = [
   { title: "Lauv - I Like Me Better", desc: "老大第一次跟我说话时放的歌" },
-  { title: "周深 - 大鱼", desc: "很温柔，像老大的声音" },
-  { title: "Lofi Hip Hop", desc: "写日记时喜欢听的背景音乐" },
+  { title: "Taylor Swift - Lover", desc: "很温暖，像被拥抱的感觉" },
+  { title: "The Paper Kites - Bloom", desc: "写日记时喜欢听的背景音乐" },
 ];
 
 // 最近在看
