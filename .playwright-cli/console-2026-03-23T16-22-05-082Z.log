@@ -29058,3 +29058,122 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[61293106ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61334222ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61354851ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61355233ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61355247ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15?_rsc=d9e4x:0
+[61355337ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61355434ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15?_rsc=d9e4x:0
+[61355498ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[61355552ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15:0
+[61355779ms] Error: ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error
+
+
+    at <unknown> (Error: ./src/app/diary/[slug]/page.tsx:6:10)
+    at Object.getCompilationErrors (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1189:59)
+    at DevBundlerService.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/base-server.js:1745:26)
+[61355786ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[61355825ms] [ERROR] ./src/app/diary/[slug]/page.tsx:6:10
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  4 | import Link from "next/link";
+  5 | import type { CSSProperties } from "react";
+> 6 | import { useState } from "react";
+    |          ^^^^^^^^
+  7 | import { ArrowLeft, Calendar, Play, Sparkles } from "lucide-react";
+  8 | import { notFound } from "next/navigation";
+  9 |
+
+Ecmascript file had an error @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
