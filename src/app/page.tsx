@@ -175,9 +175,6 @@ export default function Home() {
           </div>
         </div>
       </nav>
-          </div>
-        </div>
-      </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         
