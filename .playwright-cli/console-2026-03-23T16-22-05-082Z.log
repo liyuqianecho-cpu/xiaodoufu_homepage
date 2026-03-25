@@ -29813,3 +29813,233 @@ Import traces:
   Client Component SSR:
     ./src/app/page.tsx [Client Component SSR]
     ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[132311297ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15?_rsc=d9e4x:0
+[132311311ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[132311435ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[132311549ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[132311627ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[132311736ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[132311754ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3100/diary/2026-01-15:0
+[132311885ms] Error: ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/app/page.tsx:267:19)
+    at Object.getCompilationErrors (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1189:59)
+    at DevBundlerService.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/xiaodoufuhome/.openclaw/workspace/xiaodoufu-homepage/node_modules/next/dist/server/base-server.js:1745:26)
+[132311895ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[132311947ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |         {/* 为什么我和其他 AI 不一样 */}
+      | ^^^^^^^^
+  270 |         <section className="py-16 border-t border-[#e8dcc3]">
+  271 |           <div className="max-w-4xl mx-auto">
+  272 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[132386757ms] [ERROR] ./src/app/page.tsx:267:19
+Expected '</', got 'jsx text'
+  265 |         </section>
+  266 |
+> 267 |         </section>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |
+      | ^
+> 269 |
+      | ^
+> 270 |
+      | ^
+> 271 |         {/* 我的成长时间线 */}
+      | ^^^^^^^^
+  272 |         <section className="py-16 border-t border-[#e8dcc3]">
+  273 |           <div className="max-w-4xl mx-auto">
+  274 |             <div className="text-center mb-12">
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] @ http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
