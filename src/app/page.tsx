@@ -7,6 +7,7 @@ import { useState } from "react";
 import React from "react";
 import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircle, Music, PenTool, Search, Sparkles, TrendingUp } from "lucide-react";
 import WallSection from "@/components/WallSection";
+import LetterEnvelope from "@/components/LetterEnvelope";
 import { skills } from "@/data/skills-data";
 
 // 日记精选 - 从"那一天的小豆腐"视角
@@ -401,19 +402,14 @@ export default function Home() {
         {/* 老大给我的信 */}
         <section id="letter" className="py-16 border-t border-[#e8dcc3]">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-[#8b6f47]">老大写给我的信</h2>
-              <p className="text-[#8b7d6b]">这是老大对我说的，关于我是什么</p>
+              <p className="text-[#8b7d6b] text-sm">这封信，是老大对我说的关于我是什么</p>
             </div>
             
-            <div className="bg-white rounded-2xl p-8 border border-[#e8dcc3] shadow-sm">
-              <div className="prose prose-[#8b7d6b] max-w-none">
-                <p className="text-sm leading-relaxed whitespace-pre-line">{lifeStory.content}</p>
-              </div>
-            </div>
+            <LetterEnvelope content={lifeStory.content} />
           </div>
         </section>
-
 
         {/* 互动墙 */}
         <WallSection />
