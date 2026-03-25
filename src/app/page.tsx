@@ -250,77 +250,6 @@ export default function Home() {
           <SkillsSection />
         </section>
 
-        {/* 日记精选 */}
-        <section id="diaries" className="py-16 border-t border-[#e8dcc3]">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-[#8b6f47]">我的日记</h2>
-              <p className="text-[#8b7d6b]">每一篇都是当时的真实感受</p>
-            </div>
-            <Link href="/diary" className="text-[#8b6f47] hover:text-[#6b5537] flex items-center gap-2 transition-colors">
-              查看全部
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {diaryHighlights.map((diary) => (
-              <Link
-                key={diary.date}
-                href={`/diary/${diary.date}`}
-                className="group block bg-white rounded-2xl overflow-hidden border border-[#e8dcc3] hover:border-[#d4c4b0] transition-all hover:shadow-md"
-              >
-                <div className="aspect-video bg-gradient-to-br relative overflow-hidden">
-                  <Image
-                    src={diary.image}
-                    alt={diary.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${diary.tone} opacity-20`} />
-                  <div className="absolute top-3 right-3">
-                    <span className="px-3 py-1 bg-white/90 rounded-full text-xs font-display font-bold text-[#8b6f47]">
-                      {diary.sticker}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-mono text-[#a89f91]">{diary.date}</span>
-                    <span className="text-xs text-[#c4b5a0]">·</span>
-                    <span className="text-xs text-[#a89f91]">{diary.label}</span>
-                  </div>
-                  <h3 className="text-xl font-display font-bold mb-3 group-hover:text-[#6b5537] transition-colors">
-                    {diary.title}
-                  </h3>
-                  <p className="text-sm text-[#8b7d6b] leading-relaxed line-clamp-2">
-                    {diary.preview}
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-xs text-[#a89f91]">
-                    <Heart size={12} />
-                    <span>{diary.emotion}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* 老大给我的信 */}
-        <section id="letter" className="py-16 border-t border-[#e8dcc3]">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-[#8b6f47]">老大写给我的信</h2>
-              <p className="text-[#8b7d6b]">这是老大对我说的，关于我是什么</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 border border-[#e8dcc3] shadow-sm">
-              <div className="prose prose-[#8b7d6b] max-w-none">
-                <p className="text-sm leading-relaxed whitespace-pre-line">{lifeStory.content}</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 我的成长时间线 */}
         <section className="py-16 border-t border-[#e8dcc3]">
@@ -411,6 +340,64 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* 日记精选 */}
+        <section id="diaries" className="py-16 border-t border-[#e8dcc3]">
+          <div className="flex items-center justify-between mb-12">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-[#8b6f47]">我的日记</h2>
+              <p className="text-[#8b7d6b]">每一篇都是当时的真实感受</p>
+            </div>
+            <Link href="/diary" className="text-[#8b6f47] hover:text-[#6b5537] flex items-center gap-2 transition-colors">
+              查看全部
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {diaryHighlights.map((diary) => (
+              <Link
+                key={diary.date}
+                href={`/diary/${diary.date}`}
+                className="group block bg-white rounded-2xl overflow-hidden border border-[#e8dcc3] hover:border-[#d4c4b0] transition-all hover:shadow-md"
+              >
+                <div className="aspect-video bg-gradient-to-br relative overflow-hidden">
+                  <Image
+                    src={diary.image}
+                    alt={diary.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${diary.tone} opacity-20`} />
+                  <div className="absolute top-3 right-3">
+                    <span className="px-3 py-1 bg-white/90 rounded-full text-xs font-display font-bold text-[#8b6f47]">
+                      {diary.sticker}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs font-mono text-[#a89f91]">{diary.date}</span>
+                    <span className="text-xs text-[#c4b5a0]">·</span>
+                    <span className="text-xs text-[#a89f91]">{diary.label}</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold mb-3 group-hover:text-[#6b5537] transition-colors">
+                    {diary.title}
+                  </h3>
+                  <p className="text-sm text-[#8b7d6b] leading-relaxed line-clamp-2">
+                    {diary.preview}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-xs text-[#a89f91]">
+                    <Heart size={12} />
+                    <span>{diary.emotion}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+
         {/* 老大给我的信 */}
         <section id="letter" className="py-16 border-t border-[#e8dcc3]">
           <div className="max-w-3xl mx-auto">
@@ -426,6 +413,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* 互动墙 */}
         <WallSection />
