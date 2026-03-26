@@ -543,7 +543,10 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
                     <VideoPlayer />
                   )}
                   
-                  <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                  <div 
+                    className="text-base md:text-lg leading-loose"
+                    dangerouslySetInnerHTML={{ __html: htmlContent }} 
+                  />
                 </div>
               </div>
 
