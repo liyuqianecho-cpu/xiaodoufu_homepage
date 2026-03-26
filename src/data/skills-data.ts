@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import { Brain, Sparkles, TrendingUp, Calendar, MessageCircle } from "lucide-react";
 
 interface Conversation {
@@ -7,7 +8,7 @@ interface Conversation {
 }
 
 export interface Skill {
-  icon: any;
+  icon: LucideIcon;
   name: string;
   desc: string;
   detail: string;

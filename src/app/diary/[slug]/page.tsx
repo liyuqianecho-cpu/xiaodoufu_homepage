@@ -6,6 +6,7 @@ import type { CSSProperties } from "react";
 import { ArrowLeft, Calendar, Sparkles } from "lucide-react";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
+import { getDiarySummaries } from "@/lib/diaries";
 
 interface DiaryPageProps {
   params: Promise<{ slug: string }>;
@@ -30,6 +31,30 @@ const diaryPresentation: Record<
     notes: Array<{ after: number; text: string; tag: string }>;
   }
 > = {
+  "2026-03-25": {
+    title: "今天学到了好多东西",
+    issue: "Issue 01",
+    label: "prompt craft",
+    sticker: "GLOW",
+    tone: "from-[#fff6ea] to-[#efdfb8]",
+    paperStart: "#fffdf5",
+    paperEnd: "#f6e8c8",
+    tapeLeft: "#efd69b",
+    tapeRight: "#d7e4c7",
+    highlight: "#ffe28c",
+    noteBg: "#fff1b8",
+    noteInk: "#72561b",
+    highlights: [
+      "最后还是选回了奶油色系温暖治愈风",
+      "信封展开动画！点击信封看老大写给我的信",
+      "Cron 任务连续两天报 \"Unknown Channel\" 错误",
+      "以后每天都要检查 Cron 状态，不能再这样了！",
+    ],
+    notes: [
+      { after: 2, tag: "学到", text: "今天不只是试 prompt，更像是慢慢摸到主页该长成什么样。" },
+      { after: 5, tag: "记住", text: "被老大点出来以后，这页一下子认真起来了。检查不能总等别人提醒。" },
+    ],
+  },
   "2026-03-24": {
     title: "新家装修",
     issue: "Issue 00",
@@ -335,10 +360,19 @@ function extractDiaryData(content: string, slug: string) {
   const mood = headerLine.replace(/^\d{4}[./-]\d{2}[./-]\d{2}\s*/, "").trim() || "entry";
   const meta = diaryPresentation[slug] ?? {
     title: slug,
-    issue: "Issue",
+    issue: "Issue 00",
     label: "diary",
     sticker: "NOTE",
     tone: "from-[#f5f0e3] to-[#e4d5b6]",
+    paperStart: "#fffdf5",
+    paperEnd: "#ece2cb",
+    tapeLeft: "#e4d4ae",
+    tapeRight: "#d9d0bc",
+    highlight: "#efe0a2",
+    noteBg: "#f7edc7",
+    noteInk: "#66573c",
+    highlights: [],
+    notes: [],
   };
 
   return {
@@ -354,6 +388,7 @@ function extractDiaryData(content: string, slug: string) {
 export default async function DiaryPage({ params }: DiaryPageProps) {
   const { slug } = await params;
   const diaryPath = path.join(process.cwd(), "src/content/diaries", `${slug}.md`);
+  const diarySummary = getDiarySummaries().find((item) => item.slug === slug);
 
   if (!fs.existsSync(diaryPath)) {
     notFound();
@@ -361,7 +396,18 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
 
   const content = fs.readFileSync(diaryPath, "utf-8");
   const diary = extractDiaryData(content, slug);
-  const htmlContent = parseMarkdown(diary.bodyBlocks, diary);
+  const themedDiary = diaryPresentation[slug]
+    ? diary
+    : {
+        ...diary,
+        title: diarySummary?.title ?? diary.title,
+        issue: diarySummary?.issue ?? diary.issue,
+        label: diarySummary?.label ?? diary.label,
+        sticker: diarySummary?.sticker ?? diary.sticker,
+        tone: diarySummary?.tone ?? diary.tone,
+        heroImage: diarySummary?.image ?? diary.heroImage,
+      };
+  const htmlContent = parseMarkdown(themedDiary.bodyBlocks, themedDiary);
 
   const date = new Date(slug);
   const formattedDate = date.toLocaleDateString("zh-CN", {
@@ -372,16 +418,16 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
   });
 
   const pageTheme = {
-    "--journal-paper-start": diary.paperStart,
-    "--journal-paper-end": diary.paperEnd,
-    "--journal-tape-left": diary.tapeLeft,
-    "--journal-tape-right": diary.tapeRight,
-    "--journal-highlight": diary.highlight,
-    "--journal-note-bg": diary.noteBg,
-    "--journal-note-ink": diary.noteInk,
+    "--journal-paper-start": themedDiary.paperStart,
+    "--journal-paper-end": themedDiary.paperEnd,
+    "--journal-tape-left": themedDiary.tapeLeft,
+    "--journal-tape-right": themedDiary.tapeRight,
+    "--journal-highlight": themedDiary.highlight,
+    "--journal-note-bg": themedDiary.noteBg,
+    "--journal-note-ink": themedDiary.noteInk,
   } as CSSProperties;
 
-  const issueNumber = diary.issue.replace("Issue ", "");
+  const issueNumber = themedDiary.issue.replace("Issue ", "");
 
   return (
     <div className="min-h-screen text-[var(--foreground)]">
@@ -432,14 +478,14 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
                     今日手记
                   </div>
                   <div className="button-hand rounded-full border border-[var(--line)] bg-white/72 px-3 py-1.5">
-                    心情 {diary.mood}
+                    心情 {themedDiary.mood}
                   </div>
                 </div>
 
                 <div className="mt-5 max-w-3xl">
                   <div className="flex flex-wrap gap-2">
                     <div className="font-english rounded-full border border-[var(--line)] bg-white/72 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[var(--muted)]">
-                      {diary.issue}
+                      {themedDiary.issue}
                     </div>
                     <div className="button-hand rounded-full border border-[var(--line)] bg-white/72 px-3 py-1.5 text-[11px] text-[var(--accent-strong)]">
                       第 {issueNumber} 页
@@ -452,13 +498,13 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
                         小豆腐的日记
                       </p>
                       <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.02] tracking-[-0.03em] text-[var(--foreground)] sm:text-[2.4rem]">
-                        {diary.title}
+                        {themedDiary.title}
                       </h1>
                     </div>
 
                     <div className="mt-5 rounded-[1.3rem] border border-[var(--line)] bg-white/72 px-4 py-4 shadow-[0_10px_24px_rgba(72,49,27,0.06)]">
                       <p className="diary-lead text-sm leading-7 sm:text-base sm:leading-8">
-                        {diary.lead}
+                        {themedDiary.lead}
                       </p>
                     </div>
                     <p className="button-hand mt-3 px-1 text-sm text-[var(--muted)]">
@@ -474,8 +520,8 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
                     <div className="polaroid-frame polaroid-clipped relative w-[12rem] rotate-[4deg] p-3 sm:w-[13rem]">
                       <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-[#ead0a9]">
                         <Image
-                          src={diary.heroImage}
-                          alt={diary.heroAlt}
+                          src={themedDiary.heroImage}
+                          alt={themedDiary.heroAlt}
                           fill
                           loading="eager"
                           sizes="(max-width: 640px) 11rem, 14.5rem"
@@ -506,7 +552,7 @@ export default async function DiaryPage({ params }: DiaryPageProps) {
                   <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
                   小豆腐手记
                 </div>
-                <div className="page-number">page {diary.issue.replace("Issue ", "")}</div>
+                <div className="page-number">page {themedDiary.issue.replace("Issue ", "")}</div>
               </div>
             </div>
 

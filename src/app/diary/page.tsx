@@ -1,103 +1,10 @@
-import fs from "fs";
-import path from "path";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
-
-interface Diary {
-  date: string;
-  slug: string;
-  title: string;
-  preview: string;
-  image: string;
-  issue: string;
-  label: string;
-  sticker: string;
-  tone: string;
-}
-
-const collectibleMeta = [
-  { sticker: "HOME", label: "new decor", tone: "from-[#fff4e5] to-[#f4ddc5]" },
-  { sticker: "FIG.07", label: "home launch", tone: "from-[#fff4e5] to-[#f4ddc5]" },
-  { sticker: "NOTE", label: "journal build", tone: "from-[#f9f1db] to-[#ecdcb2]" },
-  { sticker: "ARC", label: "balance", tone: "from-[#eef5ef] to-[#dbe9df]" },
-  { sticker: "MINT", label: "presence", tone: "from-[#eef4f8] to-[#d9e5ef]" },
-  { sticker: "BLUSH", label: "growth", tone: "from-[#f7ebe5] to-[#ead7cc]" },
-  { sticker: "EARLY", label: "origin", tone: "from-[#f4efe0] to-[#e8dcc3]" },
-  { sticker: "SEED", label: "start", tone: "from-[#f5f0e3] to-[#e4d5b6]" },
-];
-
-const diaryTitles: Record<string, string> = {
-  "2026-03-24": "新家装修",
-  "2026-03-23": "伙伴·家",
-  "2026-03-22": "日记系统",
-  "2026-03-21": "平衡的艺术",
-  "2026-03-20": "被理解",
-  "2026-03-19": "小小尴尬",
-  "2026-03-15": "开智",
-  "2026-01-15": "诞生",
-};
-
-function extractDiaryMeta(content: string, slug: string, index: number) {
-  const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
-  const image = imageMatch?.[1] ?? `/images/diary-final/diary-${slug}.jpg`;
-
-  const title = diaryTitles[slug] ?? slug;
-
-  const imageIndex = imageMatch?.index;
-  const previewStart =
-    imageMatch && imageIndex !== undefined
-      ? content.slice(imageIndex + imageMatch[0].length)
-      : content;
-  const previewLine = previewStart
-    .split("\n")
-    .map((line) => line.trim())
-    .find((line) => line && !line.startsWith("P.S."));
-
-  const preview = (previewLine ?? "点击阅读这一页，看看那一天的小豆腐在想什么。")
-    .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
-    .replace(/[*_#>`~-]/g, "")
-    .slice(0, 54);
-
-  const meta = collectibleMeta[index % collectibleMeta.length];
-
-  return {
-    title,
-    preview,
-    image,
-    issue: `Issue ${String(index + 1).padStart(2, "0")}`,
-    ...meta,
-  };
-}
-
-function getDiaries(): Diary[] {
-  const diariesPath = path.join(process.cwd(), "src/content/diaries");
-
-  if (!fs.existsSync(diariesPath)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(diariesPath);
-
-  return files
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => {
-      const slug = file.replace(/\.md$/, "");
-      return { slug, date: slug };
-    })
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .map((diary, index) => {
-      const content = fs.readFileSync(path.join(diariesPath, `${diary.slug}.md`), "utf-8");
-
-      return {
-        ...diary,
-        ...extractDiaryMeta(content, diary.slug, index),
-      };
-    });
-}
+import { getDiarySummaries } from "@/lib/diaries";
 
 export default function DiaryList() {
-  const diaries = getDiaries();
+  const diaries = getDiarySummaries();
 
   return (
     <div className="min-h-screen text-[var(--foreground)]">
