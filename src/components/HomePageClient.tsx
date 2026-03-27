@@ -475,7 +475,8 @@ function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all hover:shadow-md cursor-pointer`}
+            whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(73, 52, 31, 0.12)' }}
+            className={`${skill.tone} rounded-2xl p-6 ring-1 ring-opacity-50 transition-all cursor-pointer`}
             onClick={() => setSelectedSkill(index)}
           >
             <div className="flex items-start gap-4">
