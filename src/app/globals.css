@@ -1,69 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Doge Sans";
-  src: url("/fonts/DogeSans-Normal.otf") format("opentype");
-  font-style: normal;
-  font-weight: 400 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Doge Sans";
-  src: url("/fonts/DogeSans-Italic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 400 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Yang ZhuShi";
-  src: url("/fonts/YangRenDong-ZhuShi-ExtraLight.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Yang ZhuShi";
-  src: url("/fonts/YangRenDong-ZhuShi-Light.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Yang ZhuShi";
-  src: url("/fonts/YangRenDong-ZhuShi-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "KangKang";
-  src: url("/fonts/KangKangTi.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MuYao Soft";
-  src: url("/fonts/MuYao-SoftBrush.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MuYao Free";
-  src: url("/fonts/MuYao-Freehand.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-}
-
 :root {
   --background: #f6efe4;
   --foreground: #271d14;
@@ -79,11 +15,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-english: "Doge Sans", "Avenir Next", "Helvetica Neue", sans-serif;
+  --font-english: var(--font-asset-english), "Avenir Next", "Helvetica Neue", sans-serif;
   --font-sans: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
-  --font-display: "Yang ZhuShi", "Kaiti SC", "STKaiti", "KaiTi", serif;
-  --font-note-cn: "MuYao Soft", "KangKang", "Yang ZhuShi", "Kaiti SC", "STKaiti", serif;
-  --font-hand-cn: "MuYao Free", "MuYao Soft", "KangKang", "Yang ZhuShi", "Kaiti SC", "STKaiti", serif;
+  --font-display: var(--font-asset-display), "Kaiti SC", "STKaiti", "KaiTi", serif;
+  --font-note-cn: var(--font-asset-note-soft), var(--font-asset-note), var(--font-asset-display), "Kaiti SC", "STKaiti", serif;
+  --font-hand-cn: var(--font-asset-hand), var(--font-asset-note-soft), var(--font-asset-note), var(--font-asset-display), "Kaiti SC", "STKaiti", serif;
 }
 
 html {
@@ -114,24 +50,24 @@ body::before {
 }
 
 .font-display {
-  font-family: "Yang ZhuShi", "Kaiti SC", "STKaiti", "KaiTi", serif;
+  font-family: var(--font-asset-display), "Kaiti SC", "STKaiti", "KaiTi", serif;
 }
 
 .font-english {
-  font-family: "Doge Sans", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: var(--font-asset-english), "Avenir Next", "Helvetica Neue", sans-serif;
 }
 
 .font-note-cn {
-  font-family: "MuYao Soft", "KangKang", "Yang ZhuShi", "Kaiti SC", "STKaiti", serif;
+  font-family: var(--font-asset-note-soft), var(--font-asset-note), var(--font-asset-display), "Kaiti SC", "STKaiti", serif;
 }
 
 .font-hand-cn {
-  font-family: "MuYao Free", "MuYao Soft", "KangKang", "Yang ZhuShi", "Kaiti SC", "STKaiti", serif;
+  font-family: var(--font-asset-hand), var(--font-asset-note-soft), var(--font-asset-note), var(--font-asset-display), "Kaiti SC", "STKaiti", serif;
 }
 
 .button-hand,
 .label-hand {
-  font-family: "MuYao Free", "MuYao Soft", "KangKang", "Yang ZhuShi", "Kaiti SC", "STKaiti", serif;
+  font-family: var(--font-asset-hand), var(--font-asset-note-soft), var(--font-asset-note), var(--font-asset-display), "Kaiti SC", "STKaiti", serif;
   letter-spacing: 0.03em;
   font-weight: 600;
 }

@@ -7,6 +7,7 @@ import { ArrowLeft, Calendar, Sparkles } from "lucide-react";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
 import { getDiarySummaries } from "@/lib/diaries";
+import { withBasePath } from "@/lib/site";
 
 interface DiaryPageProps {
   params: Promise<{ slug: string }>;
@@ -263,7 +264,8 @@ function inlineMarkdown(text: string) {
 
   html = html.replace(
     /!\[(.*?)\]\((.*?)\)/gim,
-    '<img src="$2" alt="$1" class="diary-inline-image" />',
+    (_match, alt, src) =>
+      `<img src="${withBasePath(src)}" alt="${escapeHtml(alt)}" class="diary-inline-image" />`,
   );
   html = html.replace(/\*\*(.*?)\*\*/gim, "<strong>$1</strong>");
   html = html.replace(/~~(.*?)~~/gim, "<del>$1</del>");
@@ -349,7 +351,7 @@ function extractDiaryData(content: string, slug: string) {
   const imageMatch =
     imageBlockIndex >= 0 ? blocks[imageBlockIndex].match(/!\[(.*?)\]\((.*?)\)/) : null;
 
-  const heroImage = imageMatch?.[2] ?? `/images/diary-final/diary-${slug}.jpg`;
+  const heroImage = withBasePath(imageMatch?.[2] ?? `/images/diary-final/diary-${slug}.jpg`);
   const heroAlt = imageMatch?.[1] ?? slug;
   const lead = imageBlockIndex >= 0 ? blocks[imageBlockIndex + 1] ?? "" : blocks[1] ?? "";
   const bodyBlocks =

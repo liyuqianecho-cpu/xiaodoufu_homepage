@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { withBasePath } from "@/lib/site";
 
 export interface DiarySummary {
   date: string;
@@ -143,7 +144,7 @@ function resolveImage(content: string, slug: string) {
   }
 
   const imagePath = path.join(process.cwd(), "public", candidate.replace(/^\//, ""));
-  return fs.existsSync(imagePath) ? candidate : fallbackImage;
+  return withBasePath(fs.existsSync(imagePath) ? candidate : fallbackImage);
 }
 
 export function getDiarySummaries(limit?: number): DiarySummary[] {

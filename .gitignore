@@ -23,6 +23,11 @@
 # misc
 .DS_Store
 *.pem
+output/
+public/images/reference/
+public/images/diary-generated/
+public/images/diary-regenerated/
+public/videos/
 
 # debug
 npm-debug.log*

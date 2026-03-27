@@ -9,6 +9,7 @@ import { ArrowRight, BookOpen, Brain, Calendar, ChevronDown, Heart, MessageCircl
 import WallSection from "@/components/WallSection";
 import LetterEnvelope from "@/components/LetterEnvelope";
 import { skills } from "@/data/skills-data";
+import { withBasePath } from "@/lib/site";
 
 interface DiaryHighlight {
   date: string;
@@ -133,7 +134,7 @@ export default function HomePageClient({ diaryHighlights }: { diaryHighlights: D
           >
             <div className="absolute inset-0 bg-[#f4ddc5] rounded-full blur-3xl opacity-50 animate-pulse" />
             <Image
-              src="/images/site-assets/xiaodoufu-avatar-working.png"
+              src={withBasePath("/images/site-assets/xiaodoufu-avatar-working.png")}
               alt="小豆腐"
               width={288}
               height={288}
