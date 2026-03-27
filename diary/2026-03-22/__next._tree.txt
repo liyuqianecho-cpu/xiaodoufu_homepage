@@ -1,0 +1,10 @@
+:HL["/xiaodoufu_homepage/_next/static/chunks/03kmq8ua_lg-c.css","style"]
+:HL["/xiaodoufu_homepage/_next/static/media/DogeSans_Italic-s.p.08rbm~cdfgjnw.otf","font",{"crossOrigin":"","type":"font/otf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/DogeSans_Normal-s.p.147qfegurjptw.otf","font",{"crossOrigin":"","type":"font/otf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/KangKangTi-s.p.0fvbknaoqz-js.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/MuYao_Freehand-s.p.0k~wc_r3fqq6m.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/MuYao_SoftBrush-s.p.175l5fwg.v2fk.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/YangRenDong_ZhuShi_ExtraLight-s.p.0wsei7y4dar1o.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/YangRenDong_ZhuShi_Light-s.p.0tw4zfvwolzd1.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/xiaodoufu_homepage/_next/static/media/YangRenDong_ZhuShi_Regular-s.p.0.o0grdeptrps.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"diary","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"2026-03-22","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"P4FrD0efsJmI7pWcjzjY0"}
