@@ -291,8 +291,16 @@ function parseMarkdown(blocks: string[], diary: ReturnType<typeof extractDiaryDa
     .join("");
 }
 
+function stripHiddenWorkflowPlans(content: string): string {
+  return content
+    .replace(/<!--\s*diary-image-plan[\s\S]*?-->\s*/g, "")
+    .replace(/<!--\s*diary-music-plan[\s\S]*?-->\s*/g, "")
+    .trim();
+}
+
 function extractDiaryData(content: string, slug: string) {
-  const blocks = content
+  const visibleContent = stripHiddenWorkflowPlans(content);
+  const blocks = visibleContent
     .split(/\n\s*\n/)
     .map((block) => block.trim())
     .filter(Boolean);
